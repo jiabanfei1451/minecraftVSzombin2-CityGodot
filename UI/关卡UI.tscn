@@ -1,0 +1,343 @@
+[gd_scene format=3 uid="uid://bllinxtvttldn"]
+
+[ext_resource type="Script" uid="uid://b8yr37w785gl" path="res://UI/UI脚本/关卡ui.gd" id="1_7vmet"]
+[ext_resource type="Texture2D" uid="uid://gfnhkojwnb7r" path="res://UI/UI素材图/energy_slot.png" id="1_vef5y"]
+[ext_resource type="FontFile" uid="uid://drufi2oet6818" path="res://字体/minecraft_font.ttf" id="2_y5c8j"]
+[ext_resource type="Script" uid="uid://cu4xocbta6lkm" path="res://UI/UI脚本/显示剩余器械能.gd" id="3_giglb"]
+[ext_resource type="PackedScene" uid="uid://c2y62prxcbege" path="res://UI/卡槽.tscn" id="4_5kfun"]
+[ext_resource type="Texture2D" uid="uid://bfvmpalatfbey" path="res://UI/UI素材图/pickaxe_slot.png" id="5_rkmq1"]
+[ext_resource type="Script" uid="uid://b8fftbuq1f1n5" path="res://UI/UI脚本/稿子.gd" id="6_5kfun"]
+[ext_resource type="Texture2D" uid="uid://dd8fvsjugqam6" path="res://UI/UI素材图/pickaxe.png" id="6_f2ssi"]
+[ext_resource type="Script" uid="uid://pnxuh2gynej" path="res://UI/UI脚本/texture_rect.gd" id="8_5kfun"]
+[ext_resource type="Texture2D" uid="uid://ugolr2rk0njp" path="res://UI/UI素材图/default.png" id="8_whurc"]
+[ext_resource type="Texture2D" uid="uid://gpvqcekdmvgn" path="res://UI/UI素材图/gear.png" id="10_onmey"]
+[ext_resource type="Script" uid="uid://daxexba230g4o" path="res://UI/UI脚本/器械能贴图.gd" id="11_gaxoa"]
+[ext_resource type="AudioStream" uid="uid://bxbuv4fn0bfbd" path="res://音效/取消.ogg" id="12_yogps"]
+[ext_resource type="AudioStream" uid="uid://cyg4yka3cp4b2" path="res://音效/铲子.ogg" id="13_ut48t"]
+[ext_resource type="Texture2D" uid="uid://b7ch57uppqgrk" path="res://物体/素材图/dispenser_5.png" id="15_ttaes"]
+[ext_resource type="Script" uid="uid://c3k2sp2sdnbph" path="res://测试/音乐.gd" id="16_jjsiv"]
+[ext_resource type="Theme" uid="uid://c5xrknm7o3j2v" path="res://UI/主题/按钮.tres" id="18_jb2pv"]
+[ext_resource type="Theme" uid="uid://csbkk4yprtga1" path="res://UI/主题/背景.tres" id="18_tr2ou"]
+[ext_resource type="Script" uid="uid://nvigu28hc1g3" path="res://测试/菜单.gd" id="19_a36ym"]
+[ext_resource type="Texture2D" uid="uid://bempbqyrsgpo3" path="res://UI/UI素材图/UI空心.png" id="21_vhfa3"]
+[ext_resource type="Script" uid="uid://ccngavqdfdrxg" path="res://UI/texture_rect.gd" id="22_24d4e"]
+[ext_resource type="Texture2D" uid="uid://bj3axkhqvlae8" path="res://物体/素材图/default_3.png" id="24_ca4td"]
+[ext_resource type="Script" uid="uid://o5162ckytnng" path="res://测试/滑动块.gd" id="24_n8jse"]
+[ext_resource type="Script" uid="uid://bngdlpv6uwtun" path="res://测试/关闭.gd" id="25_n8jse"]
+
+[sub_resource type="Theme" id="Theme_24d4e"]
+
+[sub_resource type="Gradient" id="Gradient_nat7a"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_vhfa3"]
+gradient = SubResource("Gradient_nat7a")
+
+[sub_resource type="Gradient" id="Gradient_a36ym"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ddswd"]
+gradient = SubResource("Gradient_a36ym")
+
+[node name="关卡ui" type="CanvasLayer" unique_id=37875330]
+script = ExtResource("1_7vmet")
+
+[node name="卡槽" type="Control" parent="." unique_id=1120500753]
+layout_direction = 2
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.8, 0.8)
+
+[node name="器械能显示" type="Button" parent="卡槽" unique_id=71833866]
+layout_direction = 2
+layout_mode = 0
+offset_left = -6.0
+offset_top = -6.0
+offset_right = 50.0
+offset_bottom = 74.0
+scale = Vector2(1.5, 1.5)
+icon = ExtResource("1_vef5y")
+flat = true
+
+[node name="Label" type="Label" parent="卡槽/器械能显示" unique_id=1236919376]
+custom_minimum_size = Vector2(0, 22)
+layout_mode = 0
+offset_left = 6.0
+offset_top = 53.333336
+offset_right = 52.0
+offset_bottom = 75.333336
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_y5c8j")
+theme_override_font_sizes/font_size = 15
+text = "9990"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+clip_text = true
+text_direction = 3
+script = ExtResource("3_giglb")
+
+[node name="卡槽" parent="卡槽" unique_id=592199938 node_paths=PackedStringArray("UI") instance=ExtResource("4_5kfun")]
+layout_direction = 2
+layout_mode = 1
+offset_left = 67.5
+offset_top = -2.5
+offset_right = 219.5
+offset_bottom = 221.5
+"器械ID" = 1
+"消耗" = 0
+"冷却" = 0.0
+UI = NodePath("../..")
+
+[node name="卡槽2" parent="卡槽" unique_id=1959721411 node_paths=PackedStringArray("UI") instance=ExtResource("4_5kfun")]
+layout_direction = 2
+layout_mode = 1
+offset_left = 137.5
+offset_top = -2.5
+offset_right = 289.5
+offset_bottom = 221.5
+"器械ID" = 2
+"消耗" = 0
+"冷却" = 0.0
+UI = NodePath("../..")
+"绑定快捷键" = "2"
+
+[node name="卡槽3" parent="卡槽" unique_id=1769045529 node_paths=PackedStringArray("UI") instance=ExtResource("4_5kfun")]
+layout_direction = 2
+layout_mode = 1
+offset_left = 207.5
+offset_top = -2.4999998
+offset_right = 359.5
+offset_bottom = 221.5
+"器械ID" = 3
+"消耗" = 0
+"冷却" = 0.0
+UI = NodePath("../..")
+"绑定快捷键" = "3"
+
+[node name="稿子" type="Button" parent="." unique_id=1738480321]
+layout_direction = 2
+offset_left = 614.10004
+offset_top = -2.7000003
+offset_right = 686.10004
+offset_bottom = 69.3
+pivot_offset = Vector2(5, 5)
+icon = ExtResource("5_rkmq1")
+flat = true
+script = ExtResource("6_5kfun")
+
+[node name="我是贴图" type="TextureRect" parent="稿子" unique_id=927489614]
+layout_mode = 0
+offset_left = 4.4082913
+offset_top = 4.4082847
+offset_right = 68.408295
+offset_bottom = 68.40829
+mouse_filter = 2
+mouse_behavior_recursive = 2
+mouse_force_pass_scroll_events = false
+texture = ExtResource("6_f2ssi")
+
+[node name="星之碎片贴图" type="TextureRect" parent="." unique_id=25255191]
+offset_left = 153.0
+offset_top = 322.0
+offset_right = 193.0
+offset_bottom = 362.0
+mouse_filter = 2
+mouse_behavior_recursive = 2
+texture = ExtResource("8_whurc")
+script = ExtResource("8_5kfun")
+
+[node name="器械能贴图" type="TextureRect" parent="." unique_id=1721923442]
+offset_left = 153.0
+offset_top = 322.0
+offset_right = 193.0
+offset_bottom = 362.0
+pivot_offset = Vector2(20, 20)
+mouse_filter = 2
+mouse_behavior_recursive = 2
+texture = ExtResource("10_onmey")
+script = ExtResource("11_gaxoa")
+
+[node name="取消" type="AudioStreamPlayer" parent="." unique_id=760228215]
+stream = ExtResource("12_yogps")
+script = ExtResource("16_jjsiv")
+"选项" = "音效"
+
+[node name="稿子2" type="AudioStreamPlayer" parent="." unique_id=749652488]
+stream = ExtResource("13_ut48t")
+script = ExtResource("16_jjsiv")
+"选项" = "音效"
+
+[node name="选定的卡槽" type="TextureRect" parent="." unique_id=593393910]
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("15_ttaes")
+
+[node name="菜单" type="Control" parent="." unique_id=1322796542]
+clip_contents = true
+layout_direction = 2
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme = ExtResource("18_tr2ou")
+script = ExtResource("19_a36ym")
+
+[node name="ColorRect" type="ColorRect" parent="菜单" unique_id=315482655]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5019608)
+
+[node name="Button" type="Button" parent="菜单" unique_id=392294575]
+clip_contents = true
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -200.0
+offset_right = 300.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme = ExtResource("18_jb2pv")
+theme_type_variation = &"FlatButton"
+
+[node name="进度条" type="TextureProgressBar" parent="菜单/Button" unique_id=630976386]
+layout_direction = 2
+layout_mode = 0
+offset_left = 111.0
+offset_top = 364.0
+offset_right = 865.0
+offset_bottom = 398.0
+scale = Vector2(0.5, 0.5)
+theme = SubResource("Theme_24d4e")
+step = 0.0
+value = 100.0
+nine_patch_stretch = true
+stretch_margin_left = 9
+stretch_margin_top = 9
+stretch_margin_right = 9
+stretch_margin_bottom = 9
+texture_under = SubResource("GradientTexture1D_vhfa3")
+texture_progress = SubResource("GradientTexture2D_ddswd")
+tint_progress = Color(0, 0.7833333, 1, 1)
+
+[node name="贴图" type="NinePatchRect" parent="菜单/Button/进度条" unique_id=614203005]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_behavior_recursive = 1
+texture = ExtResource("21_vhfa3")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="滑动块" type="TextureRect" parent="菜单/Button/进度条" unique_id=1063305013]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("21_vhfa3")
+script = ExtResource("22_24d4e")
+
+[node name="进度条2" type="TextureProgressBar" parent="菜单/Button" unique_id=779120552]
+layout_direction = 2
+layout_mode = 0
+offset_left = 111.0
+offset_top = 325.0
+offset_right = 865.0
+offset_bottom = 359.0
+scale = Vector2(0.5, 0.5)
+theme = SubResource("Theme_24d4e")
+step = 0.0
+value = 100.0
+nine_patch_stretch = true
+stretch_margin_left = 9
+stretch_margin_top = 9
+stretch_margin_right = 9
+stretch_margin_bottom = 9
+texture_under = SubResource("GradientTexture1D_vhfa3")
+texture_progress = SubResource("GradientTexture2D_ddswd")
+tint_progress = Color(0, 0.7833333, 1, 1)
+
+[node name="贴图" type="NinePatchRect" parent="菜单/Button/进度条2" unique_id=1739758277]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_behavior_recursive = 1
+texture = ExtResource("21_vhfa3")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="滑动块" type="TextureRect" parent="菜单/Button/进度条2" unique_id=1786299062]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("21_vhfa3")
+script = ExtResource("24_n8jse")
+
+[node name="关闭" type="Button" parent="菜单" unique_id=157964468]
+process_mode = 1
+layout_mode = 0
+offset_left = 813.0
+offset_top = 129.0
+offset_right = 863.0
+offset_bottom = 179.0
+action_mode = 0
+keep_pressed_outside = true
+text = "1"
+icon = ExtResource("24_ca4td")
+script = ExtResource("25_n8jse")
+
+[connection signal="pressed" from="稿子" to="稿子" method="_on_pressed"]
+[connection signal="value_changed" from="菜单/Button/进度条" to="菜单/Button/进度条/滑动块" method="_on_进度条_value_changed"]
+[connection signal="mouse_entered" from="菜单/Button/进度条/滑动块" to="菜单/Button/进度条/滑动块" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="菜单/Button/进度条/滑动块" to="菜单/Button/进度条/滑动块" method="_on_mouse_exited"]
+[connection signal="value_changed" from="菜单/Button/进度条2" to="菜单/Button/进度条2/滑动块" method="_on_进度条_value_changed"]
+[connection signal="mouse_entered" from="菜单/Button/进度条2/滑动块" to="菜单/Button/进度条2/滑动块" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="菜单/Button/进度条2/滑动块" to="菜单/Button/进度条2/滑动块" method="_on_mouse_exited"]
+[connection signal="button_up" from="菜单/关闭" to="菜单/关闭" method="_on_button_up"]

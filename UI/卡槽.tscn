@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://c2y62prxcbege"]
+
+[ext_resource type="Texture2D" uid="uid://dpri4otf6rdve" path="res://UI/UI素材图/card.png" id="1_cnbmn"]
+[ext_resource type="Script" uid="uid://ltqrbdtkybwc" path="res://UI/UI脚本/卡槽.gd" id="2_1cb34"]
+[ext_resource type="Texture2D" uid="uid://dgxcb6en1kf14" path="res://物体/素材图/furnace_3.png" id="3_0axi2"]
+[ext_resource type="FontFile" uid="uid://drufi2oet6818" path="res://字体/minecraft_font.ttf" id="4_vv27x"]
+[ext_resource type="AudioStream" uid="uid://b26bo4pmbil2g" path="res://音效/选择.ogg" id="6_ykfso"]
+[ext_resource type="Script" uid="uid://c3k2sp2sdnbph" path="res://测试/音乐.gd" id="7_1oesp"]
+[ext_resource type="AudioStream" uid="uid://bxbuv4fn0bfbd" path="res://音效/取消.ogg" id="7_g53io"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vv27x"]
+atlas = ExtResource("3_0axi2")
+region = Rect2(72, 6, 48, 57)
+
+[node name="卡槽" type="Button" unique_id=592199938]
+layout_direction = 3
+offset_left = 1000.0
+offset_right = 1152.0
+offset_bottom = 224.0
+scale = Vector2(0.5, 0.5)
+icon = ExtResource("1_cnbmn")
+flat = true
+script = ExtResource("2_1cb34")
+
+[node name="消耗" type="Label" parent="." unique_id=736111170]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 187.0
+offset_right = 145.0
+offset_bottom = 217.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_vv27x")
+theme_override_font_sizes/font_size = 22
+text = "9999"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="图片" type="Control" parent="." unique_id=1947832721]
+clip_contents = true
+anchors_preset = 0
+offset_left = 7.0
+offset_top = 42.0
+offset_right = 145.0
+offset_bottom = 184.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 2
+
+[node name="显示图片" type="TextureRect" parent="图片" unique_id=1315882737]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.5
+offset_top = -37.0
+offset_right = 34.5
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 2
+texture = SubResource("AtlasTexture_vv27x")
+stretch_mode = 3
+
+[node name="冷却" type="ColorRect" parent="." unique_id=1466163188]
+modulate = Color(0, 0, 0, 0.4862745)
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 148.0
+offset_bottom = 220.0
+pivot_offset_ratio = Vector2(0.5, 0)
+mouse_filter = 2
+
+[node name="选用" type="AudioStreamPlayer" parent="." unique_id=1999429575]
+stream = ExtResource("6_ykfso")
+script = ExtResource("7_1oesp")
+"选项" = "音效"
+
+[node name="取消" type="AudioStreamPlayer" parent="." unique_id=667751426]
+stream = ExtResource("7_g53io")
+script = ExtResource("7_1oesp")
+"选项" = "音效"
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="button_up" from="." to="." method="_on_button_up"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]
