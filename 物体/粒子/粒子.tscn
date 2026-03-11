@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cgt1bw4ifodlt"]
+
+[ext_resource type="Texture2D" uid="uid://dyrr7usc6b2ei" path="res://物体/素材图/normal.png" id="1_u7v5k"]
+[ext_resource type="Script" uid="uid://bvgoirdtl7ca4" path="res://脚本/粒子.gd" id="2_aicqy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aicqy"]
+atlas = ExtResource("1_u7v5k")
+
+[node name="粒子" type="Sprite2D" unique_id=591650605]
+z_as_relative = false
+scale = Vector2(0.1, 0.1)
+texture = SubResource("AtlasTexture_aicqy")
+script = ExtResource("2_aicqy")
