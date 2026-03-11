@@ -5,5 +5,4 @@
 
 [node name="物理组件" type="Node" unique_id=908775390]
 script = ExtResource("1_nfn82")
-"高度" = Vector2(-200, 0)
 "阴影" = ExtResource("2_qbl44")
