@@ -1,0 +1,934 @@
+[gd_scene format=3 uid="uid://cff7if8145pjk"]
+
+[ext_resource type="Script" uid="uid://c484poiklwag5" path="res://脚本/场景初始化.gd" id="1_58vlv"]
+[ext_resource type="Texture2D" uid="uid://ciflufkaosjv4" path="res://halloween_8.png" id="2_pso4y"]
+[ext_resource type="Script" uid="uid://b18s3veuwooim" path="res://脚本/地图.gd" id="3_16r12"]
+[ext_resource type="PackedScene" uid="uid://dim8rk13omwvv" path="res://UI/草坪.tscn" id="4_16r12"]
+[ext_resource type="PackedScene" uid="uid://du3y4377ebqq2" path="res://物体/器械/发射器.tscn" id="4_t2nrt"]
+[ext_resource type="PackedScene" uid="uid://cgt1bw4ifodlt" path="res://物体/粒子/粒子.tscn" id="6_16r12"]
+[ext_resource type="PackedScene" uid="uid://ckiok4d47oivw" path="res://物体/光源/光源.tscn" id="7_qicn3"]
+[ext_resource type="PackedScene" uid="uid://csk8t48c78r57" path="res://UI/信息显示.tscn" id="8_wlbx2"]
+[ext_resource type="PackedScene" uid="uid://bllinxtvttldn" path="res://UI/关卡UI.tscn" id="9_t2nrt"]
+[ext_resource type="PackedScene" uid="uid://d38gmmhnrwqx2" path="res://物体/暗.tscn" id="10_pso4y"]
+[ext_resource type="Shader" uid="uid://cnqd336ph3e8y" path="res://着色器/暗.tres" id="11_16r12"]
+[ext_resource type="AudioStream" uid="uid://cyg4yka3cp4b2" path="res://音效/铲子.ogg" id="13_brlwc"]
+[ext_resource type="AudioStream" uid="uid://bxbuv4fn0bfbd" path="res://音效/取消.ogg" id="14_nxrjw"]
+[ext_resource type="AudioStream" uid="uid://wnt1yioxenw2" path="res://音效/音乐/万圣夜.ogg" id="15_nxrjw"]
+[ext_resource type="Script" uid="uid://c3k2sp2sdnbph" path="res://测试/音乐.gd" id="16_wlbx2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t2nrt"]
+shader = ExtResource("11_16r12")
+
+[sub_resource type="Animation" id="Animation_o38pd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("摄像头:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_m3u7u"]
+resource_name = "new_animation"
+length = 1.5
+step = 0.1
+capture_included = true
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("摄像头:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(-2, 0.5),
+"update": 2,
+"values": [Vector2(0, 0), Vector2(207.62, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_nxrjw"]
+length = 1.5
+capture_included = true
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("摄像头:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(0.5, 0.22531268),
+"update": 2,
+"values": [Vector2(207.62, 0), Vector2(96.955, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o38pd"]
+_data = {
+&"RESET": SubResource("Animation_o38pd"),
+&"选卡": SubResource("Animation_m3u7u"),
+&"选卡完成": SubResource("Animation_nxrjw")
+}
+
+[node name="序章" type="Node2D" unique_id=835649732 node_paths=PackedStringArray("滤镜节点")]
+z_as_relative = false
+position = Vector2(703.785, 400)
+script = ExtResource("1_58vlv")
+"关卡信息" = "万圣夜 第1天"
+"器械能" = 9990
+"滤镜节点" = NodePath("暗黑滤镜")
+
+[node name="地图" type="Sprite2D" parent="." unique_id=272418162]
+position = Vector2(-11, -13)
+texture = ExtResource("2_pso4y")
+script = ExtResource("3_16r12")
+
+[node name="草坪" type="Node2D" parent="." unique_id=963705123]
+
+[node name="草坪" parent="草坪" unique_id=1831605041 instance=ExtResource("4_16r12")]
+z_as_relative = false
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_top = -37.0
+offset_right = -371.0
+offset_bottom = 42.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.4392157)
+"器械" = ExtResource("4_t2nrt")
+
+[node name="草坪2" parent="草坪" unique_id=1074671047 instance=ExtResource("4_16r12")]
+z_as_relative = false
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_top = -116.0
+offset_right = -371.0
+offset_bottom = -37.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.4392157)
+"器械" = ExtResource("4_t2nrt")
+"坐标" = Vector2(0, 1)
+
+[node name="草坪3" parent="草坪" unique_id=140553563 instance=ExtResource("4_16r12")]
+z_as_relative = false
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_top = -195.0
+offset_right = -371.0
+offset_bottom = -116.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.4392157)
+"器械" = ExtResource("4_t2nrt")
+"坐标" = Vector2(0, 2)
+
+[node name="草坪4" parent="草坪" unique_id=493684646 instance=ExtResource("4_16r12")]
+z_as_relative = false
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_top = 42.0
+offset_right = -371.0
+offset_bottom = 121.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.4392157)
+"器械" = ExtResource("4_t2nrt")
+"坐标" = Vector2(0, 3)
+
+[node name="草坪5" parent="草坪" unique_id=1837670249 instance=ExtResource("4_16r12")]
+z_as_relative = false
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_top = 121.0
+offset_right = -371.0
+offset_bottom = 200.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.4392157)
+"器械" = ExtResource("4_t2nrt")
+"坐标" = Vector2(0, 4)
+
+[node name="草坪6" parent="草坪" unique_id=1882010400 instance=ExtResource("4_16r12")]
+z_as_relative = false
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -371.0
+offset_top = -37.0
+offset_right = -290.0
+offset_bottom = 42.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.4392157)
+"器械" = ExtResource("4_t2nrt")
+
+[node name="草坪7" parent="草坪" unique_id=49590398 instance=ExtResource("4_16r12")]
+z_as_relative = false
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -371.0
+offset_top = -116.0
+offset_right = -290.0
+offset_bottom = -37.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.4392157)
+"器械" = ExtResource("4_t2nrt")
+"坐标" = Vector2(0, 1)
+
+[node name="草坪8" parent="草坪" unique_id=854364071 instance=ExtResource("4_16r12")]
+z_as_relative = false
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -371.0
+offset_top = -195.0
+offset_right = -290.0
+offset_bottom = -116.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.4392157)
+"器械" = ExtResource("4_t2nrt")
+"坐标" = Vector2(0, 2)
+
+[node name="草坪9" parent="草坪" unique_id=26055461 instance=ExtResource("4_16r12")]
+z_as_relative = false
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -371.0
+offset_top = 42.0
+offset_right = -290.0
+offset_bottom = 121.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.4392157)
+"器械" = ExtResource("4_t2nrt")
+"坐标" = Vector2(0, 3)
+
+[node name="草坪10" parent="草坪" unique_id=1263904969 instance=ExtResource("4_16r12")]
+z_as_relative = false
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -371.0
+offset_top = 121.0
+offset_right = -290.0
+offset_bottom = 200.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.4392157)
+"器械" = ExtResource("4_t2nrt")
+"坐标" = Vector2(0, 4)
+
+[node name="草坪11" parent="草坪" unique_id=84394061 instance=ExtResource("4_16r12")]
+z_as_relative = false
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -290.0
+offset_top = -37.0
+offset_right = -209.0
+offset_bottom = 42.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.4392157)
+"器械" = ExtResource("4_t2nrt")
+
+[node name="草坪12" parent="草坪" unique_id=1573090948 instance=ExtResource("4_16r12")]
+z_as_relative = false
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -290.0
+offset_top = -116.0
+offset_right = -209.0
+offset_bottom = -37.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.4392157)
+"器械" = ExtResource("4_t2nrt")
+"坐标" = Vector2(0, 1)
+
+[node name="草坪13" parent="草坪" unique_id=105399409 instance=ExtResource("4_16r12")]
+z_as_relative = false
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -290.0
+offset_top = -195.0
+offset_right = -209.0
+offset_bottom = -116.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.4392157)
+"器械" = ExtResource("4_t2nrt")
+"坐标" = Vector2(0, 2)
+
+[node name="草坪14" parent="草坪" unique_id=1092023797 instance=ExtResource("4_16r12")]
+z_as_relative = false
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -290.0
+offset_top = 42.0
+offset_right = -209.0
+offset_bottom = 121.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.4392157)
+"器械" = ExtResource("4_t2nrt")
+"坐标" = Vector2(0, 3)
+
+[node name="草坪15" parent="草坪" unique_id=839663674 instance=ExtResource("4_16r12")]
+z_as_relative = false
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -290.0
+offset_top = 121.0
+offset_right = -209.0
+offset_bottom = 200.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.4392157)
+"器械" = ExtResource("4_t2nrt")
+"坐标" = Vector2(0, 4)
+
+[node name="草坪16" parent="草坪" unique_id=1681122008 instance=ExtResource("4_16r12")]
+z_as_relative = false
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -209.0
+offset_top = -37.0
+offset_right = -128.0
+offset_bottom = 42.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.4392157)
+"器械" = ExtResource("4_t2nrt")
+
+[node name="草坪17" parent="草坪" unique_id=1296662266 instance=ExtResource("4_16r12")]
+z_as_relative = false
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -209.0
+offset_top = -116.0
+offset_right = -128.0
+offset_bottom = -37.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.4392157)
+"器械" = ExtResource("4_t2nrt")
+"坐标" = Vector2(0, 1)
+
+[node name="草坪18" parent="草坪" unique_id=726188926 instance=ExtResource("4_16r12")]
+z_as_relative = false
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -209.0
+offset_top = -195.0
+offset_right = -128.0
+offset_bottom = -116.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.4392157)
+"器械" = ExtResource("4_t2nrt")
+"坐标" = Vector2(0, 2)
+
+[node name="草坪19" parent="草坪" unique_id=631099983 instance=ExtResource("4_16r12")]
+z_as_relative = false
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -209.0
+offset_top = 42.0
+offset_right = -128.0
+offset_bottom = 121.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.4392157)
+"器械" = ExtResource("4_t2nrt")
+"坐标" = Vector2(0, 3)
+
+[node name="草坪20" parent="草坪" unique_id=1673746931 instance=ExtResource("4_16r12")]
+z_as_relative = false
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -209.0
+offset_top = 121.0
+offset_right = -128.0
+offset_bottom = 200.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.4392157)
+"器械" = ExtResource("4_t2nrt")
+"坐标" = Vector2(0, 4)
+
+[node name="草坪21" parent="草坪" unique_id=1317603226 instance=ExtResource("4_16r12")]
+z_as_relative = false
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -128.0
+offset_top = -37.0
+offset_right = -47.0
+offset_bottom = 42.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.4392157)
+"器械" = ExtResource("4_t2nrt")
+
+[node name="草坪22" parent="草坪" unique_id=1285801803 instance=ExtResource("4_16r12")]
+z_as_relative = false
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -128.0
+offset_top = -116.0
+offset_right = -47.0
+offset_bottom = -37.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.4392157)
+"器械" = ExtResource("4_t2nrt")
+"坐标" = Vector2(0, 1)
+
+[node name="草坪23" parent="草坪" unique_id=229948863 instance=ExtResource("4_16r12")]
+z_as_relative = false
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -128.0
+offset_top = -195.0
+offset_right = -47.0
+offset_bottom = -116.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.4392157)
+"器械" = ExtResource("4_t2nrt")
+"坐标" = Vector2(0, 2)
+
+[node name="草坪24" parent="草坪" unique_id=1011518535 instance=ExtResource("4_16r12")]
+z_as_relative = false
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -128.0
+offset_top = 42.0
+offset_right = -47.0
+offset_bottom = 121.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.4392157)
+"器械" = ExtResource("4_t2nrt")
+"坐标" = Vector2(0, 3)
+
+[node name="草坪25" parent="草坪" unique_id=1609673806 instance=ExtResource("4_16r12")]
+z_as_relative = false
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -128.0
+offset_top = 121.0
+offset_right = -47.0
+offset_bottom = 200.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.4392157)
+"器械" = ExtResource("4_t2nrt")
+"坐标" = Vector2(0, 4)
+
+[node name="草坪26" parent="草坪" unique_id=582627058 instance=ExtResource("4_16r12")]
+z_as_relative = false
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -47.0
+offset_top = -37.0
+offset_right = 34.0
+offset_bottom = 42.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.4392157)
+"器械" = ExtResource("4_t2nrt")
+
+[node name="草坪27" parent="草坪" unique_id=882022031 instance=ExtResource("4_16r12")]
+z_as_relative = false
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -47.0
+offset_top = -116.0
+offset_right = 34.0
+offset_bottom = -37.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.4392157)
+"器械" = ExtResource("4_t2nrt")
+"坐标" = Vector2(0, 1)
+
+[node name="草坪28" parent="草坪" unique_id=1207642969 instance=ExtResource("4_16r12")]
+z_as_relative = false
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -47.0
+offset_top = -195.0
+offset_right = 34.0
+offset_bottom = -116.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.4392157)
+"器械" = ExtResource("4_t2nrt")
+"坐标" = Vector2(0, 2)
+
+[node name="草坪29" parent="草坪" unique_id=461080732 instance=ExtResource("4_16r12")]
+z_as_relative = false
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -47.0
+offset_top = 42.0
+offset_right = 34.0
+offset_bottom = 121.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.4392157)
+"器械" = ExtResource("4_t2nrt")
+"坐标" = Vector2(0, 3)
+
+[node name="草坪30" parent="草坪" unique_id=1538705804 instance=ExtResource("4_16r12")]
+z_as_relative = false
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -47.0
+offset_top = 121.0
+offset_right = 34.0
+offset_bottom = 200.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.4392157)
+"器械" = ExtResource("4_t2nrt")
+"坐标" = Vector2(0, 4)
+
+[node name="草坪31" parent="草坪" unique_id=1837697276 instance=ExtResource("4_16r12")]
+z_as_relative = false
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 34.0
+offset_top = -37.0
+offset_right = 115.0
+offset_bottom = 42.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.4392157)
+"器械" = ExtResource("4_t2nrt")
+
+[node name="草坪32" parent="草坪" unique_id=953356972 instance=ExtResource("4_16r12")]
+z_as_relative = false
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 34.0
+offset_top = -116.0
+offset_right = 115.0
+offset_bottom = -37.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.4392157)
+"器械" = ExtResource("4_t2nrt")
+"坐标" = Vector2(0, 1)
+
+[node name="草坪33" parent="草坪" unique_id=356504278 instance=ExtResource("4_16r12")]
+z_as_relative = false
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 34.0
+offset_top = -195.0
+offset_right = 115.0
+offset_bottom = -116.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.4392157)
+"器械" = ExtResource("4_t2nrt")
+"坐标" = Vector2(0, 2)
+
+[node name="草坪34" parent="草坪" unique_id=1263455513 instance=ExtResource("4_16r12")]
+z_as_relative = false
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 34.0
+offset_top = 42.0
+offset_right = 115.0
+offset_bottom = 121.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.4392157)
+"器械" = ExtResource("4_t2nrt")
+"坐标" = Vector2(0, 3)
+
+[node name="草坪35" parent="草坪" unique_id=1817788158 instance=ExtResource("4_16r12")]
+z_as_relative = false
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 34.0
+offset_top = 121.0
+offset_right = 115.0
+offset_bottom = 200.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.4392157)
+"器械" = ExtResource("4_t2nrt")
+"坐标" = Vector2(0, 4)
+
+[node name="草坪36" parent="草坪" unique_id=1068562931 instance=ExtResource("4_16r12")]
+z_as_relative = false
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 115.0
+offset_top = -37.0
+offset_right = 196.0
+offset_bottom = 42.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.4392157)
+"器械" = ExtResource("4_t2nrt")
+
+[node name="草坪37" parent="草坪" unique_id=545094958 instance=ExtResource("4_16r12")]
+z_as_relative = false
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 115.0
+offset_top = -116.0
+offset_right = 196.0
+offset_bottom = -37.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.4392157)
+"器械" = ExtResource("4_t2nrt")
+"坐标" = Vector2(0, 1)
+
+[node name="草坪38" parent="草坪" unique_id=1671880331 instance=ExtResource("4_16r12")]
+z_as_relative = false
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 115.0
+offset_top = -195.0
+offset_right = 196.0
+offset_bottom = -116.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.4392157)
+"器械" = ExtResource("4_t2nrt")
+"坐标" = Vector2(0, 2)
+
+[node name="草坪39" parent="草坪" unique_id=230251075 instance=ExtResource("4_16r12")]
+z_as_relative = false
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 115.0
+offset_top = 42.0
+offset_right = 196.0
+offset_bottom = 121.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.4392157)
+"器械" = ExtResource("4_t2nrt")
+"坐标" = Vector2(0, 3)
+
+[node name="草坪40" parent="草坪" unique_id=1122915324 instance=ExtResource("4_16r12")]
+z_as_relative = false
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 115.0
+offset_top = 121.0
+offset_right = 196.0
+offset_bottom = 200.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.4392157)
+"器械" = ExtResource("4_t2nrt")
+"坐标" = Vector2(0, 4)
+
+[node name="草坪41" parent="草坪" unique_id=759797239 instance=ExtResource("4_16r12")]
+z_as_relative = false
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 196.0
+offset_top = -37.0
+offset_right = 277.0
+offset_bottom = 42.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.4392157)
+"器械" = ExtResource("4_t2nrt")
+
+[node name="草坪42" parent="草坪" unique_id=2103545368 instance=ExtResource("4_16r12")]
+z_as_relative = false
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 196.0
+offset_top = -116.0
+offset_right = 277.0
+offset_bottom = -37.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.4392157)
+"器械" = ExtResource("4_t2nrt")
+"坐标" = Vector2(0, 1)
+
+[node name="草坪43" parent="草坪" unique_id=1035700122 instance=ExtResource("4_16r12")]
+z_as_relative = false
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 196.0
+offset_top = -195.0
+offset_right = 277.0
+offset_bottom = -116.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.4392157)
+"器械" = ExtResource("4_t2nrt")
+"坐标" = Vector2(0, 2)
+
+[node name="草坪44" parent="草坪" unique_id=1292690128 instance=ExtResource("4_16r12")]
+z_as_relative = false
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 196.0
+offset_top = 42.0
+offset_right = 277.0
+offset_bottom = 121.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.4392157)
+"器械" = ExtResource("4_t2nrt")
+"坐标" = Vector2(0, 3)
+
+[node name="草坪45" parent="草坪" unique_id=1777653882 instance=ExtResource("4_16r12")]
+z_as_relative = false
+y_sort_enabled = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 196.0
+offset_top = 121.0
+offset_right = 277.0
+offset_bottom = 200.0
+grow_horizontal = 2
+color = Color(1, 1, 1, 0.4392157)
+"器械" = ExtResource("4_t2nrt")
+"坐标" = Vector2(0, 4)
+
+[node name="粒子" parent="草坪" unique_id=591650605 instance=ExtResource("6_16r12")]
+position = Vector2(-264, 9)
+"随机向量" = Vector2(100, 100)
+"持续时间" = 0.5
+
+[node name="光源" type="Node2D" parent="." unique_id=1619521882]
+z_index = 5
+z_as_relative = false
+
+[node name="光源" parent="光源" unique_id=2002878016 instance=ExtResource("7_qicn3")]
+position = Vector2(257, -112)
+scale = Vector2(1.75, 1.75)
+"绑定缩放" = Vector2(2, 2)
+"绑定颜色" = Color(18.892157, 18.892157, 18.892157, 1)
+"无需绑定" = true
+
+[node name="光源2" parent="光源" unique_id=1774086059 instance=ExtResource("7_qicn3")]
+position = Vector2(257, -112)
+scale = Vector2(1.75, 1.75)
+"绑定缩放" = Vector2(2.2, 2.2)
+"绑定颜色" = Color(18.892157, 18.892157, 18.892157, 1)
+"无需绑定" = true
+
+[node name="光源3" parent="光源" unique_id=39957685 instance=ExtResource("7_qicn3")]
+position = Vector2(257, -112)
+scale = Vector2(1.75, 1.75)
+"绑定缩放" = Vector2(2.3, 2.3)
+"绑定颜色" = Color(18.892157, 18.892157, 18.892157, 1)
+"无需绑定" = true
+
+[node name="光源4" parent="光源" unique_id=58776957 instance=ExtResource("7_qicn3")]
+position = Vector2(253.21503, -292)
+scale = Vector2(1.75, 1.75)
+"绑定缩放" = Vector2(2, 2)
+"绑定颜色" = Color(18.892157, 18.892157, 18.892157, 1)
+"无需绑定" = true
+
+[node name="光源5" parent="光源" unique_id=1418471668 instance=ExtResource("7_qicn3")]
+position = Vector2(253.21503, -292)
+scale = Vector2(1.75, 1.75)
+"绑定缩放" = Vector2(2.2, 2.2)
+"绑定颜色" = Color(18.892157, 18.892157, 18.892157, 1)
+"无需绑定" = true
+
+[node name="光源6" parent="光源" unique_id=1416417914 instance=ExtResource("7_qicn3")]
+position = Vector2(253.21503, -292)
+scale = Vector2(1.75, 1.75)
+"绑定缩放" = Vector2(2.3, 2.3)
+"绑定颜色" = Color(18.892157, 18.892157, 18.892157, 1)
+"无需绑定" = true
+
+[node name="关卡ui" parent="." unique_id=37875330 instance=ExtResource("9_t2nrt")]
+
+[node name="信息显示" parent="." unique_id=606184370 instance=ExtResource("8_wlbx2")]
+
+[node name="暗黑滤镜" parent="." unique_id=519399650 instance=ExtResource("10_pso4y")]
+visible = false
+modulate = Color(0, 0, 0, 0.6745098)
+z_index = 3
+material = SubResource("ShaderMaterial_t2nrt")
+position = Vector2(-688, -293)
+rotation = 3.1415927
+scale = Vector2(6566.9307, -59048.04)
+
+[node name="音效" type="Node" parent="." unique_id=738064427]
+
+[node name="铲子" type="AudioStreamPlayer" parent="音效" unique_id=808340497]
+stream = ExtResource("13_brlwc")
+script = ExtResource("16_wlbx2")
+"选项" = "音效"
+
+[node name="取消" type="AudioStreamPlayer" parent="音效" unique_id=258707690]
+stream = ExtResource("14_nxrjw")
+script = ExtResource("16_wlbx2")
+"选项" = "音效"
+
+[node name="音乐" type="AudioStreamPlayer" parent="音效" unique_id=1241001315]
+stream = ExtResource("15_nxrjw")
+volume_db = -30.895
+autoplay = true
+script = ExtResource("16_wlbx2")
+"可调用音乐引擎" = true
+"音乐选项" = 1
+
+[node name="摄像头" type="Camera2D" parent="." unique_id=547590487]
+position = Vector2(-127.78497, 0)
+
+[node name="选卡动画" type="AnimationPlayer" parent="." unique_id=669162244]
+libraries/ = SubResource("AnimationLibrary_o38pd")
+autoplay = &"选卡"
+
+[connection signal="mouse_entered" from="草坪/草坪" to="草坪/草坪" method="_on_鼠标来了"]
+[connection signal="mouse_exited" from="草坪/草坪" to="草坪/草坪" method="_on_鼠标走了"]
+[connection signal="mouse_entered" from="草坪/草坪2" to="草坪/草坪2" method="_on_鼠标来了"]
+[connection signal="mouse_exited" from="草坪/草坪2" to="草坪/草坪2" method="_on_鼠标走了"]
+[connection signal="mouse_entered" from="草坪/草坪3" to="草坪/草坪3" method="_on_鼠标来了"]
+[connection signal="mouse_exited" from="草坪/草坪3" to="草坪/草坪3" method="_on_鼠标走了"]
+[connection signal="mouse_entered" from="草坪/草坪4" to="草坪/草坪4" method="_on_鼠标来了"]
+[connection signal="mouse_exited" from="草坪/草坪4" to="草坪/草坪4" method="_on_鼠标走了"]
+[connection signal="mouse_entered" from="草坪/草坪5" to="草坪/草坪5" method="_on_鼠标来了"]
+[connection signal="mouse_exited" from="草坪/草坪5" to="草坪/草坪5" method="_on_鼠标走了"]
+[connection signal="mouse_entered" from="草坪/草坪6" to="草坪/草坪6" method="_on_鼠标来了"]
+[connection signal="mouse_exited" from="草坪/草坪6" to="草坪/草坪6" method="_on_鼠标走了"]
+[connection signal="mouse_entered" from="草坪/草坪7" to="草坪/草坪7" method="_on_鼠标来了"]
+[connection signal="mouse_exited" from="草坪/草坪7" to="草坪/草坪7" method="_on_鼠标走了"]
+[connection signal="mouse_entered" from="草坪/草坪8" to="草坪/草坪8" method="_on_鼠标来了"]
+[connection signal="mouse_exited" from="草坪/草坪8" to="草坪/草坪8" method="_on_鼠标走了"]
+[connection signal="mouse_entered" from="草坪/草坪9" to="草坪/草坪9" method="_on_鼠标来了"]
+[connection signal="mouse_exited" from="草坪/草坪9" to="草坪/草坪9" method="_on_鼠标走了"]
+[connection signal="mouse_entered" from="草坪/草坪10" to="草坪/草坪10" method="_on_鼠标来了"]
+[connection signal="mouse_exited" from="草坪/草坪10" to="草坪/草坪10" method="_on_鼠标走了"]
+[connection signal="mouse_entered" from="草坪/草坪11" to="草坪/草坪11" method="_on_鼠标来了"]
+[connection signal="mouse_exited" from="草坪/草坪11" to="草坪/草坪11" method="_on_鼠标走了"]
+[connection signal="mouse_entered" from="草坪/草坪12" to="草坪/草坪12" method="_on_鼠标来了"]
+[connection signal="mouse_exited" from="草坪/草坪12" to="草坪/草坪12" method="_on_鼠标走了"]
+[connection signal="mouse_entered" from="草坪/草坪13" to="草坪/草坪13" method="_on_鼠标来了"]
+[connection signal="mouse_exited" from="草坪/草坪13" to="草坪/草坪13" method="_on_鼠标走了"]
+[connection signal="mouse_entered" from="草坪/草坪14" to="草坪/草坪14" method="_on_鼠标来了"]
+[connection signal="mouse_exited" from="草坪/草坪14" to="草坪/草坪14" method="_on_鼠标走了"]
+[connection signal="mouse_entered" from="草坪/草坪15" to="草坪/草坪15" method="_on_鼠标来了"]
+[connection signal="mouse_exited" from="草坪/草坪15" to="草坪/草坪15" method="_on_鼠标走了"]
+[connection signal="mouse_entered" from="草坪/草坪16" to="草坪/草坪16" method="_on_鼠标来了"]
+[connection signal="mouse_exited" from="草坪/草坪16" to="草坪/草坪16" method="_on_鼠标走了"]
+[connection signal="mouse_entered" from="草坪/草坪17" to="草坪/草坪17" method="_on_鼠标来了"]
+[connection signal="mouse_exited" from="草坪/草坪17" to="草坪/草坪17" method="_on_鼠标走了"]
+[connection signal="mouse_entered" from="草坪/草坪18" to="草坪/草坪18" method="_on_鼠标来了"]
+[connection signal="mouse_exited" from="草坪/草坪18" to="草坪/草坪18" method="_on_鼠标走了"]
+[connection signal="mouse_entered" from="草坪/草坪19" to="草坪/草坪19" method="_on_鼠标来了"]
+[connection signal="mouse_exited" from="草坪/草坪19" to="草坪/草坪19" method="_on_鼠标走了"]
+[connection signal="mouse_entered" from="草坪/草坪20" to="草坪/草坪20" method="_on_鼠标来了"]
+[connection signal="mouse_exited" from="草坪/草坪20" to="草坪/草坪20" method="_on_鼠标走了"]
+[connection signal="mouse_entered" from="草坪/草坪21" to="草坪/草坪21" method="_on_鼠标来了"]
+[connection signal="mouse_exited" from="草坪/草坪21" to="草坪/草坪21" method="_on_鼠标走了"]
+[connection signal="mouse_entered" from="草坪/草坪22" to="草坪/草坪22" method="_on_鼠标来了"]
+[connection signal="mouse_exited" from="草坪/草坪22" to="草坪/草坪22" method="_on_鼠标走了"]
+[connection signal="mouse_entered" from="草坪/草坪23" to="草坪/草坪23" method="_on_鼠标来了"]
+[connection signal="mouse_exited" from="草坪/草坪23" to="草坪/草坪23" method="_on_鼠标走了"]
+[connection signal="mouse_entered" from="草坪/草坪24" to="草坪/草坪24" method="_on_鼠标来了"]
+[connection signal="mouse_exited" from="草坪/草坪24" to="草坪/草坪24" method="_on_鼠标走了"]
+[connection signal="mouse_entered" from="草坪/草坪25" to="草坪/草坪25" method="_on_鼠标来了"]
+[connection signal="mouse_exited" from="草坪/草坪25" to="草坪/草坪25" method="_on_鼠标走了"]
+[connection signal="mouse_entered" from="草坪/草坪26" to="草坪/草坪26" method="_on_鼠标来了"]
+[connection signal="mouse_exited" from="草坪/草坪26" to="草坪/草坪26" method="_on_鼠标走了"]
+[connection signal="mouse_entered" from="草坪/草坪27" to="草坪/草坪27" method="_on_鼠标来了"]
+[connection signal="mouse_exited" from="草坪/草坪27" to="草坪/草坪27" method="_on_鼠标走了"]
+[connection signal="mouse_entered" from="草坪/草坪28" to="草坪/草坪28" method="_on_鼠标来了"]
+[connection signal="mouse_exited" from="草坪/草坪28" to="草坪/草坪28" method="_on_鼠标走了"]
+[connection signal="mouse_entered" from="草坪/草坪29" to="草坪/草坪29" method="_on_鼠标来了"]
+[connection signal="mouse_exited" from="草坪/草坪29" to="草坪/草坪29" method="_on_鼠标走了"]
+[connection signal="mouse_entered" from="草坪/草坪30" to="草坪/草坪30" method="_on_鼠标来了"]
+[connection signal="mouse_exited" from="草坪/草坪30" to="草坪/草坪30" method="_on_鼠标走了"]
+[connection signal="mouse_entered" from="草坪/草坪31" to="草坪/草坪31" method="_on_鼠标来了"]
+[connection signal="mouse_exited" from="草坪/草坪31" to="草坪/草坪31" method="_on_鼠标走了"]
+[connection signal="mouse_entered" from="草坪/草坪32" to="草坪/草坪32" method="_on_鼠标来了"]
+[connection signal="mouse_exited" from="草坪/草坪32" to="草坪/草坪32" method="_on_鼠标走了"]
+[connection signal="mouse_entered" from="草坪/草坪33" to="草坪/草坪33" method="_on_鼠标来了"]
+[connection signal="mouse_exited" from="草坪/草坪33" to="草坪/草坪33" method="_on_鼠标走了"]
+[connection signal="mouse_entered" from="草坪/草坪34" to="草坪/草坪34" method="_on_鼠标来了"]
+[connection signal="mouse_exited" from="草坪/草坪34" to="草坪/草坪34" method="_on_鼠标走了"]
+[connection signal="mouse_entered" from="草坪/草坪35" to="草坪/草坪35" method="_on_鼠标来了"]
+[connection signal="mouse_exited" from="草坪/草坪35" to="草坪/草坪35" method="_on_鼠标走了"]
+[connection signal="mouse_entered" from="草坪/草坪36" to="草坪/草坪36" method="_on_鼠标来了"]
+[connection signal="mouse_exited" from="草坪/草坪36" to="草坪/草坪36" method="_on_鼠标走了"]
+[connection signal="mouse_entered" from="草坪/草坪37" to="草坪/草坪37" method="_on_鼠标来了"]
+[connection signal="mouse_exited" from="草坪/草坪37" to="草坪/草坪37" method="_on_鼠标走了"]
+[connection signal="mouse_entered" from="草坪/草坪38" to="草坪/草坪38" method="_on_鼠标来了"]
+[connection signal="mouse_exited" from="草坪/草坪38" to="草坪/草坪38" method="_on_鼠标走了"]
+[connection signal="mouse_entered" from="草坪/草坪39" to="草坪/草坪39" method="_on_鼠标来了"]
+[connection signal="mouse_exited" from="草坪/草坪39" to="草坪/草坪39" method="_on_鼠标走了"]
+[connection signal="mouse_entered" from="草坪/草坪40" to="草坪/草坪40" method="_on_鼠标来了"]
+[connection signal="mouse_exited" from="草坪/草坪40" to="草坪/草坪40" method="_on_鼠标走了"]
+[connection signal="mouse_entered" from="草坪/草坪41" to="草坪/草坪41" method="_on_鼠标来了"]
+[connection signal="mouse_exited" from="草坪/草坪41" to="草坪/草坪41" method="_on_鼠标走了"]
+[connection signal="mouse_entered" from="草坪/草坪42" to="草坪/草坪42" method="_on_鼠标来了"]
+[connection signal="mouse_exited" from="草坪/草坪42" to="草坪/草坪42" method="_on_鼠标走了"]
+[connection signal="mouse_entered" from="草坪/草坪43" to="草坪/草坪43" method="_on_鼠标来了"]
+[connection signal="mouse_exited" from="草坪/草坪43" to="草坪/草坪43" method="_on_鼠标走了"]
+[connection signal="mouse_entered" from="草坪/草坪44" to="草坪/草坪44" method="_on_鼠标来了"]
+[connection signal="mouse_exited" from="草坪/草坪44" to="草坪/草坪44" method="_on_鼠标走了"]
+[connection signal="mouse_entered" from="草坪/草坪45" to="草坪/草坪45" method="_on_鼠标来了"]
+[connection signal="mouse_exited" from="草坪/草坪45" to="草坪/草坪45" method="_on_鼠标走了"]
