@@ -1,2 +1,2 @@
-# minecraftVSzombin2-CityGodot
-为minecraftVSzombin2-uniryVer的同人制作
+# minecraftVSzombies2-CityGodot
+为minecraftVSzombies2-uniryVer的同人制作
