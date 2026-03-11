@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dlx755lu6bbcm"]
+
+[ext_resource type="Texture2D" uid="uid://ciflufkaosjv4" path="res://halloween_8.png" id="1_1sf6k"]
+[ext_resource type="Script" uid="uid://k1d5cyx3quar" path="res://测试/测试.gd" id="1_5aupx"]
+[ext_resource type="Script" uid="uid://bav8u3b4op57n" path="res://测试/halloween_8.gd" id="2_84i15"]
+[ext_resource type="Script" uid="uid://dxpnnnyxuq5tb" path="res://测试/label.gd" id="4_3ckp1"]
+[ext_resource type="Script" uid="uid://dp74tbltyge8t" path="res://测试/save_service.gd" id="4_k56e2"]
+
+[node name="测试" type="Node2D" unique_id=2094381490]
+script = ExtResource("1_5aupx")
+
+[node name="Halloween8" type="Sprite2D" parent="." unique_id=377968952]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_1sf6k")
+script = ExtResource("2_84i15")
+
+[node name="saver" type="Node" parent="." unique_id=1889816607]
+script = ExtResource("4_k56e2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1593286255]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=389878285]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "11415145464646546"
+horizontal_alignment = 1
+script = ExtResource("4_3ckp1")
