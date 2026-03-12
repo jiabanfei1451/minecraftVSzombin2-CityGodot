@@ -26,9 +26,7 @@ var beam = load("res://arrow(City).png")
 var ui场景 : PackedScene = preload("res://UI/关卡UI.tscn")
 var ui场景2 : PackedScene = preload("res://UI/信息显示.tscn")
 func _ready():
-	var ui2 = 生成节点(preload("res://UI/关卡UI.tscn"),$".")
 	var ui1 = 生成节点(preload("res://UI/信息显示.tscn"),$".")
-	
 	var 阴影 = 场景生成("阴影",1)
 	节点提供.阴影 = 阴影
 	var 粒子 = 场景生成("粒子",1)
