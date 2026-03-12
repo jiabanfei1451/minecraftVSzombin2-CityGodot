@@ -7,8 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://du3y4377ebqq2" path="res://物体/器械/发射器.tscn" id="4_t2nrt"]
 [ext_resource type="PackedScene" uid="uid://cgt1bw4ifodlt" path="res://物体/粒子/粒子.tscn" id="6_16r12"]
 [ext_resource type="PackedScene" uid="uid://ckiok4d47oivw" path="res://物体/光源/光源.tscn" id="7_qicn3"]
-[ext_resource type="PackedScene" uid="uid://csk8t48c78r57" path="res://UI/信息显示.tscn" id="8_wlbx2"]
-[ext_resource type="PackedScene" uid="uid://bllinxtvttldn" path="res://UI/关卡UI.tscn" id="9_t2nrt"]
 [ext_resource type="PackedScene" uid="uid://d38gmmhnrwqx2" path="res://物体/暗.tscn" id="10_pso4y"]
 [ext_resource type="Shader" uid="uid://cnqd336ph3e8y" path="res://着色器/暗.tres" id="11_16r12"]
 [ext_resource type="AudioStream" uid="uid://cyg4yka3cp4b2" path="res://音效/铲子.ogg" id="13_brlwc"]
@@ -82,6 +80,7 @@ script = ExtResource("1_58vlv")
 "关卡信息" = "万圣夜 第1天"
 "器械能" = 9990
 "滤镜节点" = NodePath("暗黑滤镜")
+"滤镜强度" = 0.0
 
 [node name="地图" type="Sprite2D" parent="." unique_id=272418162]
 position = Vector2(-11, -13)
@@ -761,50 +760,20 @@ z_index = 5
 z_as_relative = false
 
 [node name="光源" parent="光源" unique_id=2002878016 instance=ExtResource("7_qicn3")]
+z_index = 5
 position = Vector2(257, -112)
 scale = Vector2(1.75, 1.75)
 "绑定缩放" = Vector2(2, 2)
-"绑定颜色" = Color(18.892157, 18.892157, 18.892157, 1)
-"无需绑定" = true
-
-[node name="光源2" parent="光源" unique_id=1774086059 instance=ExtResource("7_qicn3")]
-position = Vector2(257, -112)
-scale = Vector2(1.75, 1.75)
-"绑定缩放" = Vector2(2.2, 2.2)
-"绑定颜色" = Color(18.892157, 18.892157, 18.892157, 1)
-"无需绑定" = true
-
-[node name="光源3" parent="光源" unique_id=39957685 instance=ExtResource("7_qicn3")]
-position = Vector2(257, -112)
-scale = Vector2(1.75, 1.75)
-"绑定缩放" = Vector2(2.3, 2.3)
 "绑定颜色" = Color(18.892157, 18.892157, 18.892157, 1)
 "无需绑定" = true
 
 [node name="光源4" parent="光源" unique_id=58776957 instance=ExtResource("7_qicn3")]
+z_index = 5
 position = Vector2(253.21503, -292)
 scale = Vector2(1.75, 1.75)
 "绑定缩放" = Vector2(2, 2)
 "绑定颜色" = Color(18.892157, 18.892157, 18.892157, 1)
 "无需绑定" = true
-
-[node name="光源5" parent="光源" unique_id=1418471668 instance=ExtResource("7_qicn3")]
-position = Vector2(253.21503, -292)
-scale = Vector2(1.75, 1.75)
-"绑定缩放" = Vector2(2.2, 2.2)
-"绑定颜色" = Color(18.892157, 18.892157, 18.892157, 1)
-"无需绑定" = true
-
-[node name="光源6" parent="光源" unique_id=1416417914 instance=ExtResource("7_qicn3")]
-position = Vector2(253.21503, -292)
-scale = Vector2(1.75, 1.75)
-"绑定缩放" = Vector2(2.3, 2.3)
-"绑定颜色" = Color(18.892157, 18.892157, 18.892157, 1)
-"无需绑定" = true
-
-[node name="关卡ui" parent="." unique_id=37875330 instance=ExtResource("9_t2nrt")]
-
-[node name="信息显示" parent="." unique_id=606184370 instance=ExtResource("8_wlbx2")]
 
 [node name="暗黑滤镜" parent="." unique_id=519399650 instance=ExtResource("10_pso4y")]
 visible = false

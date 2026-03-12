@@ -23,7 +23,12 @@ var 正在使用其他属性 : bool = false
 # Load the custom images for the mouse cursor.
 var arrow = load("res://arrow.png")
 var beam = load("res://arrow(City).png")
+var ui场景 : PackedScene = preload("res://UI/关卡UI.tscn")
+var ui场景2 : PackedScene = preload("res://UI/信息显示.tscn")
 func _ready():
+	var ui2 = 生成节点(preload("res://UI/关卡UI.tscn"),$".")
+	var ui1 = 生成节点(preload("res://UI/信息显示.tscn"),$".")
+	
 	var 阴影 = 场景生成("阴影",1)
 	节点提供.阴影 = 阴影
 	var 粒子 = 场景生成("粒子",1)
@@ -112,7 +117,7 @@ func _使用器械能():
 #endregion
 func 生成节点(节点:PackedScene,生成节点:Node2D):
 	var 节点实列 = 节点.instantiate()
-	get_tree().current_scene.add_child(节点实列)
+	生成节点.add_child(节点实列)
 	return 节点实列
 
 func 场景生成(名称:String,层级:int):
