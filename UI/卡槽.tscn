@@ -13,6 +13,7 @@ atlas = ExtResource("3_0axi2")
 region = Rect2(72, 6, 48, 57)
 
 [node name="卡槽" type="Button" unique_id=592199938]
+clip_contents = true
 layout_direction = 3
 offset_left = 1000.0
 offset_right = 1152.0

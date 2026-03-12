@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://cqnrr7n0y8ic3"]
+
+[ext_resource type="Script" uid="uid://tq85kdlq5feq" path="res://UI/UI脚本/选卡ui.gd" id="1_qdl42"]
+[ext_resource type="Theme" uid="uid://c5xrknm7o3j2v" path="res://UI/主题/按钮.tres" id="1_sd22c"]
+[ext_resource type="Shader" uid="uid://ww76aly7osdr" path="res://着色器/着色器2.0.gdshader" id="3_rjvoa"]
+[ext_resource type="FontFile" uid="uid://drufi2oet6818" path="res://字体/minecraft_font.ttf" id="4_rugvn"]
+[ext_resource type="Script" uid="uid://dacm626mlv83r" path="res://UI/UI脚本/完成选卡.gd" id="5_rugvn"]
+[ext_resource type="AudioStream" uid="uid://doqxxw08vbj5i" path="res://音效/好.准备.安放器械！.ogg" id="6_wltni"]
+[ext_resource type="PackedScene" uid="uid://ch0pgl7qdp2gj" path="res://UI/蓝图槽.tscn" id="6_ydu6t"]
+[ext_resource type="Script" uid="uid://c3k2sp2sdnbph" path="res://测试/音乐.gd" id="7_ydu6t"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fh3bu"]
+shader = ExtResource("3_rjvoa")
+shader_parameter/fff = Vector2(-1.385, 0)
+shader_parameter/miao_bian = true
+shader_parameter/coloro = Color(0, 0, 0, 1)
+shader_parameter/lc = 0.0
+
+[node name="选卡ui" type="CanvasLayer" unique_id=589279267]
+script = ExtResource("1_qdl42")
+
+[node name="完成选卡" type="Button" parent="." unique_id=468987191]
+material = SubResource("ShaderMaterial_fh3bu")
+layout_direction = 2
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -181.0
+offset_top = -56.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 1
+theme = ExtResource("1_sd22c")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/h_separation = 592
+theme_override_constants/icon_max_width = 94
+theme_override_constants/align_to_largest_stylebox = 89
+theme_override_constants/line_spacing = -115
+theme_override_fonts/font = ExtResource("4_rugvn")
+theme_override_font_sizes/font_size = 31
+text = "开始摇滚吧！"
+script = ExtResource("5_rugvn")
+
+[node name="卡槽" parent="." unique_id=1812954472 instance=ExtResource("6_ydu6t")]
+layout_direction = 2
+offset_left = 0.0
+offset_top = -109.0
+offset_right = 773.0
+offset_bottom = -0.25
+
+[node name="选卡背景板" type="Button" parent="." unique_id=1001424250]
+layout_direction = 2
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -537.0
+offset_right = 618.4
+offset_bottom = 63.0
+grow_vertical = 0
+pivot_offset_ratio = Vector2(0, 1)
+mouse_filter = 2
+theme = ExtResource("1_sd22c")
+
+[node name="准备开始" type="Label" parent="." unique_id=570368298]
+anchors_preset = -1
+anchor_top = 0.4
+anchor_right = 1.0
+anchor_bottom = 0.6
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0.016666412, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 4
+theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("4_rugvn")
+theme_override_font_sizes/font_size = 80
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="播放音效" type="AudioStreamPlayer" parent="准备开始" unique_id=1876887387]
+stream = ExtResource("6_wltni")
+script = ExtResource("7_ydu6t")
+"选项" = "音效"
+
+[connection signal="pressed" from="完成选卡" to="完成选卡" method="_on_pressed"]
