@@ -27,7 +27,7 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -181.0
+offset_left = -183.0
 offset_top = -56.0
 grow_horizontal = 0
 grow_vertical = 0
@@ -57,7 +57,7 @@ offset_top = -109.0
 offset_right = 773.0
 offset_bottom = -0.25
 
-[node name="选卡背景板" type="Button" parent="." unique_id=1001424250]
+[node name="蓝图展示" type="Button" parent="." unique_id=1001424250]
 layout_direction = 2
 anchors_preset = 2
 anchor_top = 1.0
@@ -69,6 +69,15 @@ grow_vertical = 0
 pivot_offset_ratio = Vector2(0, 1)
 mouse_filter = 2
 theme = ExtResource("1_sd22c")
+
+[node name="选卡节点" type="Control" parent="蓝图展示" unique_id=2105569702]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="准备开始" type="Label" parent="." unique_id=570368298]
 anchors_preset = -1
