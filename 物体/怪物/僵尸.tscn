@@ -268,8 +268,7 @@ size = Vector2(34, 90)
 [node name="僵尸" type="Area2D" unique_id=484574249 node_paths=PackedStringArray("组件节点") groups=["怪物"]]
 z_as_relative = false
 script = ExtResource("1_r6kba")
-"检测到的器械数量" = 999
-"攻击力" = 1.0
+"攻击力" = 3.0
 "组件节点" = NodePath("物理组件")
 "血量" = 10.0
 "受击" = Array[AudioStreamOggVorbis]([ExtResource("2_xat8n"), ExtResource("3_4nfmb"), ExtResource("4_e0qyl")])
