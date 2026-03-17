@@ -18,6 +18,7 @@ run/main_scene="res://章节场景/序章.tscn"
 config/use_custom_user_dir=true
 config/features=PackedStringArray("4.6", "Mobile")
 run/max_fps=60
+boot_splash/stretch_mode=0
 config/icon="res://icon.svg"
 
 [autoload]
@@ -25,6 +26,7 @@ config/icon="res://icon.svg"
 k="*uid://dyv1568phymm2"
 img="*uid://qg20ddd545wi"
 "节点提供变量"="*uid://cvkwkanf0vbaq"
+Save="*uid://bmb5esni20lsd"
 
 [collada]
 
@@ -188,9 +190,6 @@ textures/canvas_textures/default_texture_filter=3
 rendering_device/driver.windows="d3d12"
 rendering_device/fallback_to_opengl3=false
 gl_compatibility/driver="Vulkan"
-gl_compatibility/driver.windows="opengl3_angle"
-gl_compatibility/driver.linuxbsd="opengl3_es"
-gl_compatibility/driver.macos="opengl3_angle"
 renderer/rendering_method="mobile"
 textures/vram_compression/import_etc2_astc=true
 lights_and_shadows/tighter_shadow_caster_culling=false
