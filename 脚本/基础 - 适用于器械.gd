@@ -157,8 +157,7 @@ func _on_检测_area_碰到时(area: Area2D) -> void: #碰撞检测2
 #region 生命
 func 减少血量(减少血量:float): 
 	血量 -= 减少血量
-	if get_tree().current_scene.DEBUG == true:
-		pass
+	print(血量)
 
 func 死亡():
 	if 是否死亡 == false:

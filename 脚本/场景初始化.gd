@@ -12,6 +12,8 @@ var 正在使用其他属性 : bool = false
 @export_group("信息")
 @export var 关卡信息 : String = "万圣夜"
 @export var 器械能: int = 50
+@export_subgroup("1145")
+@export var 已选卡 : Array[PackedStringArray]
 @export_group("属性")
 @export_enum("白日","夜晚") var 天色 : String = "白日"
 @export_enum("开启","关闭") var 夜色滤镜 : String = "开启"
@@ -26,7 +28,8 @@ var beam = load("res://arrow(City).png")
 var ui场景 : PackedScene = preload("res://UI/关卡UI.tscn")
 var ui场景2 : PackedScene = preload("res://UI/信息显示.tscn")
 func _ready():
-	var ui1 = 生成节点(preload("res://UI/信息显示.tscn"),$".")
+	Save.mapSave("mapSave",关卡信息,器械能,0)
+	已选卡.clear()
 	var 阴影 = 场景生成("阴影",1)
 	节点提供.阴影 = 阴影
 	var 粒子 = 场景生成("粒子",1)
@@ -44,6 +47,14 @@ func _ready():
 	节点提供.特效 = 特效
 	Input.set_custom_mouse_cursor(arrow)
 	Input.set_custom_mouse_cursor(beam, Input.CURSOR_IBEAM)
+	await get_tree().create_timer(30).timeout
+	var ti : float = 30
+	while true:
+		怪物生成()
+		await get_tree().create_timer(ti).timeout
+		ti *= 0.8
+		ti = clamp(ti,0.5,30)
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -132,3 +143,9 @@ func 场景生成(名称:String,层级:int):
 		return node
 	else:
 		print("[",Time.get_time_string_from_system(),"]",name,"无法生成场景","“",名称,"”","场景已存在")
+		
+func 怪物生成():
+	var scone : PackedScene = preload("res://物体/怪物/僵尸.tscn")
+	var sx = scone.instantiate()
+	sx.position = Vector2(500,30+(80 * int(randf_range(3,-3))))
+	$"怪物".add_child(sx)

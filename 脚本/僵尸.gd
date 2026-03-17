@@ -4,11 +4,12 @@ var spell_targets = 0
 @export_group("属性")
 @export_enum("僵尸", "选项2", "选项3") var 选择AI类型: int
 @export_group("属性/不可更改")
-@export var 检测到的器械数量 : int = 0
+@export var 选定攻击 : Area2D
 @export_group("属性")
 @export var 攻击力 : float = 0.5
 @export_group("移动组件")
 @export var 速度 : float = 1
+var 状态 :String
 @export_group("绑定物理")
 @export var 组件节点 : Node
 @export_group("生命组件")
@@ -26,7 +27,6 @@ var spell_targets = 0
 @export var 脚本 : Array[Script]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	检测到的器械数量 = 0
 	if 自动设置最大血量 == true:
 		最大血量 = 血量
 	组件节点.生成节点 = $"."
@@ -34,6 +34,10 @@ func _ready() -> void:
 	开始播放动作()
 func _process(delta: float) -> void: 
 	FPS = delta
+	if 选定攻击 == null:
+		$"检测".visible = true
+	else:
+		$"检测".visible = false
 	if 是否死亡 == false:
 		if 颜色持续时间 > 0:
 			颜色持续时间 -= delta
@@ -62,21 +66,37 @@ func 减少血量(数量:float):
 		
 func 初始化移动():
 	while 是否死亡 == false:
-		if 检测到的器械数量 <= 0:
+		if 选定攻击 == null:
 			position.x -= 20 * 速度 * FPS
 		await get_tree().create_timer(FPS).timeout
 func 开始播放动作():
 	var 开始跑动 : bool
 	while 是否死亡 == false:
-		if $"手部动画".is_playing() == false:
-			if 开始跑动 == false:
-				$"手部动画".play("手（摆动）")
-			if 开始跑动 == true:
-				$"手部动画".play("手（摆动）")
-		if $"腿部动画".is_playing() == false:
-			if 开始跑动 == false:
-				$"腿部动画".play("腿部（准备跑动）")
-				开始跑动 = true
-			if 开始跑动 == true:
-				$"腿部动画".play("腿部_跑动")
+		状态 = ""
+		if 选定攻击 == null:
+			if $"手部动画".is_playing() == false and 检测存在状态() == null:
+				if 开始跑动 == false:
+					$"手部动画".play("手（摆动）")
+			if $"腿部动画".is_playing() == false and 检测存在状态() == null:
+				if 开始跑动 == false:
+					$"腿部动画".play("腿部（准备跑动）")
+					开始跑动 = true
+				if 开始跑动 == true:
+					$"腿部动画".play("腿部_跑动")
+		else:
+				开始跑动 = false
+				if $"手部动画".is_playing() == false:
+					$"手部动画".play("手_挖掘")
+				if $"腿部动画".is_playing() == false:
+					if 状态 == "":
+						$"腿部动画".play("腿部_挖掘")
+						状态 = "挖掘"
+				if 选定攻击 != null:
+					选定攻击.减少血量(攻击力*FPS)
+				else:
+					选定攻击 = null
 		await get_tree().create_timer(FPS).timeout
+		
+func 检测存在状态():
+	if 选定攻击 == null:
+		return null
