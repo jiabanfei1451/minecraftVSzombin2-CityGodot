@@ -12,13 +12,13 @@ func _process(delta: float) -> void:
 
 func 开始过度():
 	var x = create_tween()
-	$"选卡背景板".position.y = 700
+	$"蓝图展示".position.y = 700
 	$"卡槽".position.y = -109
 	$"完成选卡".position.y = 700
 	var 动画 = create_tween()
 	var d = create_tween()
 	x.tween_property($"完成选卡","position",Vector2(969,592),1).set_trans(Tween.TRANS_EXPO)
-	动画.tween_property($"选卡背景板","position",Vector2(0,110),1.0).set_trans(Tween.TRANS_EXPO)
+	动画.tween_property($"蓝图展示","position",Vector2(0,110),1.0).set_trans(Tween.TRANS_EXPO)
 	d.tween_property($"卡槽","position",Vector2(0,0),1.0).set_trans(Tween.TRANS_EXPO)
 
 func 完成选卡():
@@ -26,7 +26,7 @@ func 完成选卡():
 	var 动画 = create_tween()
 	var d = create_tween()
 	x.tween_property($"完成选卡","position",Vector2(969,700),1).set_trans(Tween.TRANS_EXPO)
-	动画.tween_property($"选卡背景板","position",Vector2(0,700),1.0).set_trans(Tween.TRANS_EXPO)
+	动画.tween_property($"蓝图展示","position",Vector2(0,700),1.0).set_trans(Tween.TRANS_EXPO)
 	d.tween_property($"卡槽","position",Vector2(0,-1000),1.0).set_trans(Tween.TRANS_EXPO)
 	await get_tree().create_timer(1).timeout
 	get_tree().current_scene.get_node("选卡动画").play("选卡完成")

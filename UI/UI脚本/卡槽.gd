@@ -2,7 +2,7 @@ extends Button
 @export_group("卡槽状态")
 @export var 启用 : bool = true
 var 器械 : PackedScene
-@export var 器械ID : int
+@export var 器械ID : int = -1
 @export var 消耗 : int = 50
 @export var 冷却 : float = 7.5
 @export var 冷却中 : bool = false
@@ -18,8 +18,12 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	$"消耗".text = str(消耗) #消耗显示
-	器械 = 精灵图列表.Pack[器械ID-1]
-	$"图片/显示图片".texture = 精灵图列表.img[器械ID-1]
+	if 器械ID > -1:
+		visible = true
+		器械 = 精灵图列表.Pack[器械ID-1]
+		$"图片/显示图片".texture = 精灵图列表.img[器械ID-1]
+	else:
+		visible = false
 	if 启用 == true:
 		if get_tree().current_scene.当前器械 == 器械:
 			modulate = Color(0.735, 0.735, 0.735, 1.0)
