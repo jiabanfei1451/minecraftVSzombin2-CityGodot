@@ -78,8 +78,9 @@ _data = {
 z_as_relative = false
 position = Vector2(703.785, 400)
 script = ExtResource("1_58vlv")
-"关卡信息" = "万圣夜 第1天"
+"关卡信息" = "游戏Demo测试"
 "器械能" = 9990
+"已选卡" = Array[PackedStringArray]([PackedStringArray()])
 "滤镜节点" = NodePath("暗黑滤镜")
 "滤镜强度" = 0.0
 
