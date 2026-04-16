@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://df03u8hamm06t"]
+
+[ext_resource type="Script" uid="uid://dpofwyeos6kcw" path="res://UI/UI脚本/场景脚本/开始界面.gd" id="1_jwfml"]
+[ext_resource type="FontFile" uid="uid://drufi2oet6818" path="res://字体/minecraft_font.ttf" id="1_qcf6n"]
+[ext_resource type="Texture2D" uid="uid://43k1md8gpic8" path="res://2/图片/开始界面.png" id="2_0e3j5"]
+[ext_resource type="Script" uid="uid://c3k2sp2sdnbph" path="res://测试/音乐.gd" id="2_uu7lv"]
+
+[node name="开始界面" type="CanvasLayer" unique_id=1488625365]
+script = ExtResource("1_jwfml")
+
+[node name="Frankenstein0" type="TextureRect" parent="." unique_id=2041554539]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_0e3j5")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=372064515]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=679155250]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.5
+offset_top = -14.5
+offset_right = 8.5
+offset_bottom = 14.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.75)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 1
+theme_override_fonts/font = ExtResource("1_qcf6n")
+theme_override_font_sizes/font_size = 20
+text = "原作者：curezor58
+二次创作：痊愈加班费"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=800098847]
+script = ExtResource("2_uu7lv")
+"可调用音乐引擎" = true
+"音乐选项" = 2

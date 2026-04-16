@@ -41,15 +41,21 @@ script = ExtResource("1_7vmet")
 
 [node name="卡槽" parent="." unique_id=1812954472 instance=ExtResource("2_vhfa3")]
 layout_direction = 2
-offset_left = 0.0
-offset_right = 771.875
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -385.9375
+offset_top = 0.0
+offset_right = 385.9375
+offset_bottom = 108.75001
+grow_horizontal = 2
+scale = Vector2(0.8, 0.8)
 
 [node name="稿子" type="Button" parent="." unique_id=1738480321]
 layout_direction = 2
-offset_left = 614.10004
-offset_top = -2.7000003
-offset_right = 686.10004
-offset_bottom = 69.3
+offset_left = 243.0
+offset_right = 323.0
+offset_bottom = 76.0
 pivot_offset = Vector2(5, 5)
 icon = ExtResource("5_rkmq1")
 flat = true
@@ -72,7 +78,6 @@ offset_top = 322.0
 offset_right = 193.0
 offset_bottom = 362.0
 mouse_filter = 2
-mouse_behavior_recursive = 2
 texture = ExtResource("8_whurc")
 script = ExtResource("8_5kfun")
 
@@ -83,7 +88,6 @@ offset_right = 193.0
 offset_bottom = 362.0
 pivot_offset = Vector2(20, 20)
 mouse_filter = 2
-mouse_behavior_recursive = 2
 texture = ExtResource("10_onmey")
 script = ExtResource("11_gaxoa")
 
@@ -98,13 +102,15 @@ script = ExtResource("16_jjsiv")
 "选项" = "音效"
 
 [node name="选定的卡槽" type="TextureRect" parent="." unique_id=593393910]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 6.0
+offset_top = 4.0
+offset_right = 46.0
+offset_bottom = 44.0
 mouse_filter = 2
 texture = ExtResource("15_ttaes")
+stretch_mode = 2
 
 [node name="菜单" type="Control" parent="." unique_id=1322796542]
-visible = false
 clip_contents = true
 layout_direction = 2
 layout_mode = 3
@@ -128,6 +134,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 1.3755798
+offset_top = -1.1015244
+offset_right = 1.3756104
+offset_bottom = -1.1015015
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.5019608)
