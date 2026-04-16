@@ -20,19 +20,20 @@ var 是否死亡 : bool = false
 @export var 放置音效 : Array[AudioStreamOggVorbis] = [preload("res://音效/石头挖掘音效/stone1.ogg"),preload("res://音效/石头挖掘音效/stone2.ogg"),preload("res://音效/石头挖掘音效/stone3.ogg"),preload("res://音效/石头挖掘音效/stone4.ogg")]
 @export_group("攻击组件")
 @export_group("攻击组件/攻击AI")
-@export_enum("发射器","熔炉") var 攻击类型 : String = "发射器"
-@export_enum("发射器","熔炉") var 大招类型 : String = "发射器" 
-@export_enum("发射器","熔炉") var 器械AI : String = "发射器"
+@export_enum("发射器","熔炉","黑曜石","自定义") var 攻击类型 : String = "发射器"
+@export_enum("发射器","熔炉","黑曜石","自定义") var 大招类型 : String = "发射器" 
 @export var 使用老动画 : bool = false
 var 判断 : String = $".".name
 var xun : int = 0
-@export var 特效 : PackedScene
+@export var 大招特效 : PackedScene = preload("uid://cryojjhf4dxf")
+@export var 大招特效偏移 : Vector2
 @export_group("攻击组件/攻击属性")
 @export var 发射物 : PackedScene
 @export var 向量 : Vector2 = Vector2(-12,-15)
 @export var 后坐力_ : float = 1
 @export var 射速 : Vector2 = Vector2(1.2,1.7)
 @export var 射弹节点 : Node2D
+@export_node_path() var 搭载脚本的物体
 @export_group("攻击组件")
 var 开始攻击 : bool = false
 var 已检测到的怪物数量 : int = 0
@@ -46,8 +47,8 @@ func _ready() -> void:
 	物理节点.生成节点 = $"."
 	var 一次性音效 = preload("res://物体/一次性音效.tscn")
 	var 一次性音效i = 一次性音效.instantiate()
-	get_tree().current_scene.add_child(一次性音效i)
 	一次性音效i.stream = 放置音效.pick_random()
+	get_tree().current_scene.add_child(一次性音效i)
 	一次性音效i.play()
 	await get_tree().create_timer(物理节点.开始延迟 + 校准延迟).timeout
 	visible = true
@@ -116,8 +117,6 @@ func _on_timer_timeout() -> void: #倒计时
 #region 发射器攻击
 	if 攻击类型 == "发射器":
 		if 大招 == false:
-			if get_tree().current_scene.DEBUG == true:
-				生成日志("发射器攻击" + " 可否攻击:" + str(开始攻击) + " 攻击向量:" + str(向量)+ " 后坐力:" + str(后坐力_) + " 已检测到的怪物数量:" + str(已检测到的怪物数量))
 			if 开始攻击 == true:
 				发射器发射()
 #endregion
@@ -127,10 +126,16 @@ func _on_timer_timeout() -> void: #倒计时
 		$AnimationPlayer.play("熔炉生产")
 		await get_tree().create_timer(2).timeout
 		$AnimationPlayer.play("熔炉产出")
-		$Timer.wait_time = randf_range(15,25)
+		$"发射音效".play()
+		var sd : PackedScene = preload("res://物体/可互动/红石.tscn")
+		var sdi = sd.instantiate()
+		sdi.position = position - Vector2(17,0)
+		get_tree().current_scene.get_node("粒子2").add_child(sdi)
+		$Timer.wait_time = 24
 		$Timer.start()
 #endregion
-
+	if 攻击类型 == "自定义":
+		搭载脚本的物体.开始攻击()
 #region 检测
 func _on_检测_area_离开时(area: Area2D) -> void: #碰撞检测
 	if area.is_in_group("怪物") == true:
@@ -157,7 +162,6 @@ func _on_检测_area_碰到时(area: Area2D) -> void: #碰撞检测2
 #region 生命
 func 减少血量(减少血量:float): 
 	血量 -= 减少血量
-	print(血量)
 
 func 死亡():
 	if 是否死亡 == false:
@@ -181,11 +185,13 @@ func 死亡():
 #endregion
 
 func 触发大招(大招类型:String):
+	if 大招类型 == "自定义":
+		搭载脚本的物体.触发大招()
 #region 大招初始化
 	var 循环数 : int = 0
 	$"大招音效".play()
-	var 特效dd = 特效.instantiate()
-	特效dd.position = $".".position + Vector2(14,0)
+	var 特效dd = 大招特效.instantiate()
+	特效dd.position = $".".position + Vector2(14,0) + 大招特效偏移
 	$"../..".get_node("特效").add_child(特效dd)
 #endregion
 
@@ -198,6 +204,7 @@ func 触发大招(大招类型:String):
 			发射器发射()
 			后坐力_ = 0.3
 			await get_tree().create_timer(0.06).timeout
+			大招 = false
 		$AnimationPlayer.play("发射")
 #endregion
 
@@ -207,10 +214,19 @@ func 触发大招(大招类型:String):
 		while 循环数 <= 6:
 			$"发射音效/开大产出".play()
 			循环数 += 1
+			var sd : PackedScene = preload("res://物体/可互动/红石.tscn")
+			var sdi = sd.instantiate()
+			sdi.position = position - Vector2(17,0)
+			get_tree().current_scene.get_node("粒子2").add_child(sdi)
 			await get_tree().create_timer(0.25).timeout
+			大招 = false
 		$AnimationPlayer.play("发射")
 #endregion
-	大招 = false
+
+#region 黑曜石
+	if 大招类型 == "黑曜石":
+		pass
+#endregion
 func _on_color_rect_mouse_entered() -> void:
 	if get_tree().current_scene.正在使用其他属性 == true:
 		$".".modulate = Color(1.353, 1.353, 1.353, 1.0)

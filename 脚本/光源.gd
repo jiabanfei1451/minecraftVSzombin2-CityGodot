@@ -9,9 +9,9 @@ var 完成绑定 : bool
 func _ready() -> void:
 	if 无需绑定 == false:
 		visible = false
-	else:
 		scale = 绑定缩放
 		modulate = 绑定颜色
+	else:pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

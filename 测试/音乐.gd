@@ -2,7 +2,9 @@ extends AudioStreamPlayer
 @export_enum("音乐","音效") var 选项 : String = "音乐"
 @export var 可调用音乐引擎 : bool = false
 var jv : int = -1
-@export_enum("万圣夜:0","选卡:1") var 音乐选项 : int = 0
+var misc : float = 0
+@export_enum("万圣夜:0","选卡:1"
+,"主界面:2") var 音乐选项 : int = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.

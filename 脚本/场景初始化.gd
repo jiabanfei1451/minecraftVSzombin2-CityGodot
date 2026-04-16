@@ -1,4 +1,5 @@
 extends Node2D
+#region 不知道
 @export var DEBUG : bool = false
 @export var 地图亮度 : float = 0
 @export_group("使用属性")
@@ -6,14 +7,26 @@ extends Node2D
 @export var 使用稿子 : bool = false
 @export var 使用器械能 : bool = false
 var 正在使用其他属性 : bool = false
+#endregion
+
+#region 草坪
 @export_group("草坪")
 @export var 当前器械 : PackedScene
-@export var 来自 : Button
+@export var 来自 : Control
+@export_subgroup("选卡信息")
+@export var 已选卡 : Array[int] = [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1]
+@export var 来源 : Array[Control] = [null,null,null,null,null,null,null,null,null,null]
+@export var 当前器械ID : int
+#endregion
+
+#region 信息
 @export_group("信息")
 @export var 关卡信息 : String = "万圣夜"
-@export var 器械能: int = 50
-@export_subgroup("1145")
-@export var 已选卡 : Array[PackedStringArray]
+@export_range(0,9990,5) var 器械能: int = 50
+@export var 当前状态 : String
+#endregion
+
+#region 属性
 @export_group("属性")
 @export_enum("白日","夜晚") var 天色 : String = "白日"
 @export_enum("开启","关闭") var 夜色滤镜 : String = "开启"
@@ -21,15 +34,21 @@ var 正在使用其他属性 : bool = false
 @export var 光源颜色 : Color
 @export_range(0,1,0.01) var 光源强度 : float = 0.5
 @export_range(0,1,0.01) var 滤镜强度 : float = 0.5
-# Called when the node enters the scene tree for the first time.
-# Load the custom images for the mouse cursor.
+#endregion
+
 var arrow = load("res://arrow.png")
 var beam = load("res://arrow(City).png")
 var ui场景 : PackedScene = preload("res://UI/关卡UI.tscn")
 var ui场景2 : PackedScene = preload("res://UI/信息显示.tscn")
-func _ready():
-	Save.mapSave("mapSave",关卡信息,器械能,0)
-	已选卡.clear()
+func _ready() -> void:
+	print("OS:",OS.get_distribution_name(),OS.get_version_alias())
+	OS.request_permissions()
+	#region 初始化
+	存档._save()
+	生成节点(preload("res://章节场景/必要物体/选卡动画.tscn"),null)
+	var ps = 生成节点(preload("res://章节场景/必要物体/暗黑滤镜.tscn"),null)
+	生成节点(preload("res://章节场景/必要物体/音效.tscn"),null)
+	滤镜节点 = ps
 	var 阴影 = 场景生成("阴影",1)
 	节点提供.阴影 = 阴影
 	var 粒子 = 场景生成("粒子",1)
@@ -47,6 +66,8 @@ func _ready():
 	节点提供.特效 = 特效
 	Input.set_custom_mouse_cursor(arrow)
 	Input.set_custom_mouse_cursor(beam, Input.CURSOR_IBEAM)
+	选卡()
+	#endregion
 	await get_tree().create_timer(30).timeout
 	var ti : float = 30
 	while true:
@@ -54,17 +75,11 @@ func _ready():
 		await get_tree().create_timer(ti).timeout
 		ti *= 0.8
 		ti = clamp(ti,0.5,30)
-	
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-#region 神秘的判定
 	if get_node("光源") != null:
 		$"光源".modulate = Color(1.0, 1.0, 1.0, 光源强度)
-		if DEBUG == true:
-			print("设定光源")
-		
 	if 夜色滤镜 == "开启":
 		滤镜节点.visible = true
 	else:
@@ -94,7 +109,6 @@ func _process(delta: float) -> void:
 		星之碎片()
 	if Input.is_action_just_released("Q"):
 		稿子()
-#endregion
 #region 常用函数
 func 禁用():
 	当前器械 = null
@@ -124,9 +138,13 @@ func _使用器械能():
 	else:
 		使用器械能 = false
 #endregion
-func 生成节点(节点:PackedScene,生成节点:Node2D):
+func 生成节点(节点:PackedScene,生成位置:Node2D):
 	var 节点实列 = 节点.instantiate()
-	生成节点.add_child(节点实列)
+	if 生成位置 == null:
+		get_tree().current_scene.add_child(节点实列)
+	else:
+		生成位置.add_child(节点实列)
+	print(String("["+Time.get_datetime_string_from_system())+"]",节点实列,",",生成位置)
 	return 节点实列
 
 func 场景生成(名称:String,层级:int):
@@ -149,3 +167,17 @@ func 怪物生成():
 	var sx = scone.instantiate()
 	sx.position = Vector2(500,30+(80 * int(randf_range(3,-3))))
 	$"怪物".add_child(sx)
+	
+func 选卡():
+	$"选卡动画".play("选卡")
+	$"音效/音乐".音乐选项 = 1
+	当前状态 = "选卡"
+func 弃卡(当前卡槽:int):
+	for i in 10:
+		print(i)
+		if 当前卡槽+i+1 < 10:
+			来源[当前卡槽 + i] = 来源[当前卡槽 + i +1]
+			已选卡[当前卡槽 + i] = 已选卡[当前卡槽 + i +1]
+		elif 当前卡槽+i < 10:
+			来源[当前卡槽 + i] = null
+			已选卡[当前卡槽 + i] = -1

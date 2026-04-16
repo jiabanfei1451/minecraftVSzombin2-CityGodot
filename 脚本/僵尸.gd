@@ -72,13 +72,13 @@ func 初始化移动():
 func 开始播放动作():
 	var 开始跑动 : bool
 	while 是否死亡 == false:
-		状态 = ""
 		if 选定攻击 == null:
 			if $"手部动画".is_playing() == false and 检测存在状态() == null:
 				if 开始跑动 == false:
 					$"手部动画".play("手（摆动）")
 			if $"腿部动画".is_playing() == false and 检测存在状态() == null:
 				if 开始跑动 == false:
+					状态 = ""
 					$"腿部动画".play("腿部（准备跑动）")
 					开始跑动 = true
 				if 开始跑动 == true:
@@ -87,10 +87,9 @@ func 开始播放动作():
 				开始跑动 = false
 				if $"手部动画".is_playing() == false:
 					$"手部动画".play("手_挖掘")
-				if $"腿部动画".is_playing() == false:
-					if 状态 == "":
-						$"腿部动画".play("腿部_挖掘")
-						状态 = "挖掘"
+				if $"腿部动画".is_playing() == false and 状态 == "":
+					$"腿部动画".play("腿部_挖掘")
+					状态 = "挖掘"
 				if 选定攻击 != null:
 					选定攻击.减少血量(攻击力*FPS)
 				else:
