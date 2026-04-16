@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Minecraft VS Zimbin 2 - City ver:godot 正式项目"
+config/name="Minecraft VS Zombies 2 City"
 config/name_localized={
 "ch": "Minecraft VS Zimbin 2 - City ver:godot"
 }
@@ -18,15 +18,17 @@ run/main_scene="res://章节场景/序章.tscn"
 config/use_custom_user_dir=true
 config/features=PackedStringArray("4.6", "Mobile")
 run/max_fps=60
+boot_splash/show_image=false
 boot_splash/stretch_mode=0
-config/icon="res://icon.svg"
+config/icon="uid://cd4yxkatgkbln"
 
 [autoload]
 
-k="*uid://dyv1568phymm2"
-img="*uid://qg20ddd545wi"
+"音乐引擎"="*uid://dyv1568phymm2"
+"精灵图"="*uid://qg20ddd545wi"
 "节点提供变量"="*uid://cvkwkanf0vbaq"
-Save="*uid://bmb5esni20lsd"
+"存档"="*uid://bmb5esni20lsd"
+"全局变量"="*uid://th8rwru8seyn"
 
 [collada]
 
@@ -34,11 +36,26 @@ use_ambient=true
 
 [display]
 
-window/size/sharp_corners=true
 window/subwindows/embed_subwindows=false
 window/stretch/mode="canvas_items"
 window/ios/allow_high_refresh_rate=false
 mouse_cursor/custom_image="uid://bp1evwq1e6wu5"
+
+[dotnet]
+
+project/assembly_name="Minecraft VS Zombies 2 City"
+
+[editor_plugins]
+
+enabled=PackedStringArray()
+
+[file_customization]
+
+folder_colors={
+"res://UI/": "orange",
+"res://图片/": "gray",
+"res://脚本/": "green"
+}
 
 [global_group]
 

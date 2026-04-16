@@ -7,82 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://du3y4377ebqq2" path="res://物体/器械/发射器.tscn" id="4_t2nrt"]
 [ext_resource type="PackedScene" uid="uid://cgt1bw4ifodlt" path="res://物体/粒子/粒子.tscn" id="6_16r12"]
 [ext_resource type="PackedScene" uid="uid://ckiok4d47oivw" path="res://物体/光源/光源.tscn" id="7_qicn3"]
-[ext_resource type="PackedScene" uid="uid://d38gmmhnrwqx2" path="res://物体/暗.tscn" id="10_pso4y"]
-[ext_resource type="Shader" uid="uid://cnqd336ph3e8y" path="res://着色器/暗.tres" id="11_16r12"]
-[ext_resource type="AudioStream" uid="uid://cyg4yka3cp4b2" path="res://音效/铲子.ogg" id="13_brlwc"]
-[ext_resource type="Script" uid="uid://yxnkf5q00kiw" path="res://脚本/选卡动画.gd" id="14_brlwc"]
-[ext_resource type="AudioStream" uid="uid://bxbuv4fn0bfbd" path="res://音效/取消.ogg" id="14_nxrjw"]
-[ext_resource type="AudioStream" uid="uid://wnt1yioxenw2" path="res://音效/音乐/万圣夜.ogg" id="15_nxrjw"]
-[ext_resource type="Script" uid="uid://c3k2sp2sdnbph" path="res://测试/音乐.gd" id="16_wlbx2"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_t2nrt"]
-shader = ExtResource("11_16r12")
-
-[sub_resource type="Animation" id="Animation_o38pd"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("摄像头:offset")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_m3u7u"]
-resource_name = "new_animation"
-length = 1.5
-step = 0.1
-capture_included = true
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("摄像头:offset")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.5),
-"transitions": PackedFloat32Array(-2, 0.5),
-"update": 2,
-"values": [Vector2(0, 0), Vector2(207.62, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_nxrjw"]
-length = 1.5
-capture_included = true
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("摄像头:offset")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.5),
-"transitions": PackedFloat32Array(0.5, 0.22531268),
-"update": 2,
-"values": [Vector2(207.62, 0), Vector2(96.955, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_o38pd"]
-_data = {
-&"RESET": SubResource("Animation_o38pd"),
-&"选卡": SubResource("Animation_m3u7u"),
-&"选卡完成": SubResource("Animation_nxrjw")
-}
-
-[node name="序章" type="Node2D" unique_id=835649732 node_paths=PackedStringArray("滤镜节点")]
+[node name="序章" type="Node2D" unique_id=835649732]
 z_as_relative = false
-position = Vector2(703.785, 400)
+position = Vector2(620, 369)
 script = ExtResource("1_58vlv")
 "关卡信息" = "游戏Demo测试"
-"器械能" = 9990
-"已选卡" = Array[PackedStringArray]([PackedStringArray()])
-"滤镜节点" = NodePath("暗黑滤镜")
-"滤镜强度" = 0.0
+metadata/_edit_lock_ = true
 
 [node name="地图" type="Sprite2D" parent="." unique_id=272418162]
 position = Vector2(-11, -13)
@@ -769,6 +700,14 @@ scale = Vector2(1.75, 1.75)
 "绑定颜色" = Color(18.892157, 18.892157, 18.892157, 1)
 "无需绑定" = true
 
+[node name="光源2" parent="光源" unique_id=1911930410 instance=ExtResource("7_qicn3")]
+modulate = Color(0.70733285, 0.6390481, 0.122034654, 1)
+self_modulate = Color(0.9666667, 1, 0, 1)
+z_index = 5
+position = Vector2(-634.785, 14.999985)
+scale = Vector2(3.5894067, 4.4362574)
+"无需绑定" = true
+
 [node name="光源4" parent="光源" unique_id=58776957 instance=ExtResource("7_qicn3")]
 z_index = 5
 position = Vector2(253.21503, -292)
@@ -776,43 +715,6 @@ scale = Vector2(1.75, 1.75)
 "绑定缩放" = Vector2(2, 2)
 "绑定颜色" = Color(18.892157, 18.892157, 18.892157, 1)
 "无需绑定" = true
-
-[node name="暗黑滤镜" parent="." unique_id=519399650 instance=ExtResource("10_pso4y")]
-visible = false
-modulate = Color(0, 0, 0, 0.6745098)
-z_index = 3
-material = SubResource("ShaderMaterial_t2nrt")
-position = Vector2(-688, -293)
-rotation = 3.1415927
-scale = Vector2(6566.9307, -59048.04)
-
-[node name="音效" type="Node" parent="." unique_id=738064427]
-
-[node name="铲子" type="AudioStreamPlayer" parent="音效" unique_id=808340497]
-stream = ExtResource("13_brlwc")
-script = ExtResource("16_wlbx2")
-"选项" = "音效"
-
-[node name="取消" type="AudioStreamPlayer" parent="音效" unique_id=258707690]
-stream = ExtResource("14_nxrjw")
-script = ExtResource("16_wlbx2")
-"选项" = "音效"
-
-[node name="音乐" type="AudioStreamPlayer" parent="音效" unique_id=1241001315]
-stream = ExtResource("15_nxrjw")
-volume_db = -30.895
-autoplay = true
-script = ExtResource("16_wlbx2")
-"可调用音乐引擎" = true
-"音乐选项" = 1
-
-[node name="摄像头" type="Camera2D" parent="." unique_id=547590487]
-position = Vector2(-127.78497, 0)
-
-[node name="选卡动画" type="AnimationPlayer" parent="." unique_id=669162244]
-libraries/ = SubResource("AnimationLibrary_o38pd")
-autoplay = &"选卡"
-script = ExtResource("14_brlwc")
 
 [connection signal="mouse_entered" from="草坪/草坪" to="草坪/草坪" method="_on_鼠标来了"]
 [connection signal="mouse_exited" from="草坪/草坪" to="草坪/草坪" method="_on_鼠标走了"]
@@ -904,4 +806,3 @@ script = ExtResource("14_brlwc")
 [connection signal="mouse_exited" from="草坪/草坪44" to="草坪/草坪44" method="_on_鼠标走了"]
 [connection signal="mouse_entered" from="草坪/草坪45" to="草坪/草坪45" method="_on_鼠标来了"]
 [connection signal="mouse_exited" from="草坪/草坪45" to="草坪/草坪45" method="_on_鼠标走了"]
-[connection signal="animation_finished" from="选卡动画" to="选卡动画" method="_on_animation_finished"]

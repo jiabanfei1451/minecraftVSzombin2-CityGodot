@@ -263,7 +263,7 @@ size = Vector2(20, 90)
 size = Vector2(33, 90)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cwwm1"]
-size = Vector2(34, 90)
+size = Vector2(34, 55)
 
 [node name="僵尸" type="Area2D" unique_id=484574249 node_paths=PackedStringArray("组件节点") groups=["怪物"]]
 z_as_relative = false
@@ -352,7 +352,7 @@ script = ExtResource("12_cwwm1")
 "父节点" = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="检测" unique_id=1430398504 groups=["判定"]]
-position = Vector2(-8, -41)
+position = Vector2(-8, -23.5)
 shape = SubResource("RectangleShape2D_cwwm1")
 
 [node name="物理组件" parent="." unique_id=908775390 node_paths=PackedStringArray("生成节点") instance=ExtResource("13_kyjuj")]
