@@ -12,8 +12,12 @@ func _process(delta: float) -> void:
 	pass
 	
 func d():
+	$"按钮".position.y += 200
 	await get_tree().create_timer(1).timeout
 	var dsss = create_tween()
 	dsss.tween_property($ColorRect,"modulate",Color(0.0, 0.0, 0.0, 0.0),1).set_trans(Tween.TRANS_SINE)
 	await dsss.finished
+	var ds = create_tween()
+	ds.tween_property($"按钮","position",$"按钮".position - Vector2(0,200),1).set_trans(Tween.TRANS_SINE)
+	$ColorRect.visible=false
 	printerr("huh?")

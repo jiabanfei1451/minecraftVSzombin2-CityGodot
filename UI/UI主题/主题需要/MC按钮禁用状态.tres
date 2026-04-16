@@ -1,0 +1,11 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://vkflwcca3wlb"]
+
+[ext_resource type="Texture2D" uid="uid://cy5lht0fkogyg" path="res://图片/button_disabled.png" id="1_5s1l5"]
+
+[resource]
+texture = ExtResource("1_5s1l5")
+texture_margin_left = 2.3782973
+texture_margin_top = 7.338164
+texture_margin_right = 2.3782973
+texture_margin_bottom = 5.0802674
+region_rect = Rect2(0, 0, 400, 40)

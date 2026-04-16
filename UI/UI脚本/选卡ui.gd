@@ -45,8 +45,9 @@ func 完成选卡():
 	$"准备开始".scale = Vector2(0.6,0.6)
 	await get_tree().create_timer(2).timeout
 	get_tree().current_scene.get_node("音效/音乐").音乐选项 = 0
-	get_tree().current_scene.生成节点(preload("res://UI/关卡UI.tscn"),$"..")
-	get_tree().current_scene.生成节点(preload("res://UI/信息显示.tscn"),$"..")
+	get_tree().current_scene.生成节点(get_tree().current_scene.ui场景,$"..")
+	get_tree().current_scene.生成节点(get_tree().current_scene.ui场景2,$"..")
+	get_tree().current_scene.生成节点(get_tree().current_scene.ui场景3 ,$"..")
 	$".".queue_free()
 
 func 音效():
