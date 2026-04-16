@@ -8,6 +8,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	var twee = create_tween()
+	twee.tween_property($".","position",Vector2(243 + (144.5*(0.5*0.8))*全局变量.卡槽数量,0),0.1)
 	if get_tree().current_scene.使用稿子 == true:
 		$"我是贴图".position = get_viewport().get_mouse_position() - $".".position + Vector2(-20,-20)
 	else:

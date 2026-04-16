@@ -35,17 +35,22 @@ func _process(delta: float) -> void:
 			绑定器械 = 器械实列
 		if 绑定器械 != null and 绑定器械.is_in_group("器械") == false:
 			绑定器械 = null
-
-		
+	if 触碰到鼠标 == true:
+		if 绑定器械 == null and get_tree().current_scene.当前器械 != null:
+			$".".color = green()
+		elif get_tree().current_scene.当前器械 == null:
+			$".".color = colornull()
+		else:
+			if get_tree().current_scene.当前器械 != null: 
+				color = red()
+	else:
+		$".".color = colornull()
 
 func _on_鼠标来了() -> void:
 	触碰到鼠标 = true
-	if 绑定器械 == null and get_tree().current_scene.当前器械 != null:
-		$".".color = green()
-	else:
-		if get_tree().current_scene.当前器械 != null: 
-			color = red()
 	
+func colornull():
+	return Color(1.0, 1.0, 1.0, 0.0)
 func green():
 	return Color(0.0, 1.0, 0.0, 1.0)
 func red():
@@ -53,4 +58,3 @@ func red():
 
 func _on_鼠标走了() -> void:
 	触碰到鼠标 = false
-	$".".color = Color(0.0, 1.0, 0.017, 0.0)
