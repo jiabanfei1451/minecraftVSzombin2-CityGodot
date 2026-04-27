@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://b263tesh341dx"]
+
+[ext_resource type="Script" uid="uid://nvigu28hc1g3" path="res://测试/菜单.gd" id="2_g8b1j"]
+[ext_resource type="Shader" uid="uid://cu3oaypq4i3xg" path="res://着色器/模糊.gdshader" id="2_mhhtx"]
+[ext_resource type="PackedScene" uid="uid://bu5sil4uavngv" path="res://UI/第二层/按钮/按钮.tscn" id="3_kx0e7"]
+[ext_resource type="PackedScene" uid="uid://c4arglk4ci36x" path="res://UI/第二层/文字/MC文字.tscn" id="4_jbp7c"]
+[ext_resource type="Script" uid="uid://cirsd5ychukc0" path="res://UI/UI脚本/场景脚本/按钮.gd" id="5_fqsgi"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kx0e7"]
+shader = ExtResource("2_mhhtx")
+shader_parameter/shendu = 1.0
+shader_parameter/fff = 0.05
+shader_parameter/a = 0.8
+
+[node name="菜单" type="CanvasLayer" unique_id=521818651]
+script = ExtResource("2_g8b1j")
+
+[node name="区域" type="Control" parent="." unique_id=1912714452]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="背景墙" type="ColorRect" parent="区域" unique_id=374099336]
+material = SubResource("ShaderMaterial_kx0e7")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="按钮" parent="区域" unique_id=1154075666 instance=ExtResource("3_kx0e7")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -200.0
+offset_right = 150.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = ""
+metadata/_edit_use_anchors_ = true
+
+[node name="Mc文字" parent="区域/按钮" unique_id=1219444780 instance=ExtResource("4_jbp7c")]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_left = -28.0
+offset_top = 6.0
+offset_right = 28.0
+offset_bottom = 35.0
+grow_vertical = 1
+theme_override_font_sizes/font_size = 30
+text = "菜单"
+metadata/_edit_use_anchors_ = true
+
+[node name="Mc文字2" parent="区域/按钮" unique_id=1413163443 instance=ExtResource("4_jbp7c")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.14
+anchor_top = 0.5225
+anchor_right = 0.8566667
+anchor_bottom = 0.5975001
+offset_left = -60.0
+offset_top = -172.0
+offset_right = 54.0
+offset_bottom = -149.0
+theme_override_colors/font_color = Color(0.68, 0.68, 0.68, 1)
+theme_override_font_sizes/font_size = 20
+text = "这里真的没什么
+你就真的没有如何事情了吗？"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="按钮" parent="区域/按钮" unique_id=976607512 instance=ExtResource("3_kx0e7")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.40666667
+anchor_top = 0.9935637
+anchor_right = 0.5933333
+anchor_bottom = 1.0010637
+offset_left = -116.0
+offset_top = -39.0
+offset_right = 116.0
+offset_bottom = -6.425476
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 20
+text = "返回"
+script = ExtResource("5_fqsgi")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="区域/按钮/按钮" to="区域/按钮/按钮" method="_on_pressed"]

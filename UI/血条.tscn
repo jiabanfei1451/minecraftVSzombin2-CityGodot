@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://c2qbnurx2pxnj"]
+
+[ext_resource type="Script" uid="uid://bdseq3fcwme42" path="res://UI/UI脚本/血条.gd" id="1_0tqef"]
+[ext_resource type="FontFile" uid="uid://drufi2oet6818" path="res://字体/minecraft_font.ttf" id="2_yux0m"]
+
+[node name="血条" type="ColorRect" unique_id=2115989242]
+custom_minimum_size = Vector2(0, 7)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 190.0
+offset_top = -4.0
+offset_right = 260.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_0tqef")
+
+[node name="当前值" type="ColorRect" parent="." unique_id=320503046]
+modulate = Color(0.51462185, 0, 0, 1)
+custom_minimum_size = Vector2(0, 7)
+layout_mode = 0
+offset_top = -1.0
+offset_right = 70.0
+offset_bottom = 8.0
+
+[node name="显示" type="Label" parent="." unique_id=783352736]
+clip_contents = true
+custom_minimum_size = Vector2(70, 7)
+layout_mode = 0
+offset_right = 70.0
+offset_bottom = 7.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("2_yux0m")
+theme_override_font_sizes/font_size = 6
+text = "100"
+horizontal_alignment = 1
