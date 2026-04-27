@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bu5sil4uavngv"]
+
+[ext_resource type="Theme" uid="uid://bsballpnnbgjv" path="res://UI/UI主题/MC主题.tres" id="1_wcpg8"]
+
+[node name="按钮" type="Button" unique_id=1154075666]
+offset_left = -16.0
+offset_right = 9.347412
+offset_bottom = 16.574507
+theme = ExtResource("1_wcpg8")
+text = "7891"

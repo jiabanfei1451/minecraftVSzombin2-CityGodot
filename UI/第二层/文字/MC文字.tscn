@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c4arglk4ci36x"]
+
+[ext_resource type="Theme" uid="uid://l4176xm8imnj" path="res://UI/UI主题/MC文字主题.tres" id="1_y4dl0"]
+
+[node name="Mc文字" type="Label" unique_id=1219444780]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = -11.5
+offset_right = 22.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_y4dl0")
+text = "你好"

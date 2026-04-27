@@ -1,0 +1,32 @@
+[gd_resource type="Theme" format=3 uid="uid://bsballpnnbgjv"]
+
+[ext_resource type="FontFile" uid="uid://drufi2oet6818" path="res://字体/minecraft_font.ttf" id="1_wkx5m"]
+[ext_resource type="StyleBox" uid="uid://vkflwcca3wlb" path="res://UI/UI主题/主题需要/MC按钮禁用状态.tres" id="2_eosc8"]
+[ext_resource type="StyleBox" uid="uid://doxtv8r6omtcd" path="res://UI/UI主题/主题需要/MC按钮正常状态.tres" id="3_6dh03"]
+[ext_resource type="StyleBox" uid="uid://b6ulwmhcmypwb" path="res://UI/UI主题/主题需要/MC按钮悬停.tres" id="4_usfkx"]
+[ext_resource type="StyleBox" uid="uid://b7xv588q1st15" path="res://UI/UI主题/主题需要/MC按钮按下状态.tres" id="5_dfuad"]
+
+[resource]
+default_font = ExtResource("1_wkx5m")
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_disabled_color = Color(1, 1, 1, 1)
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("1_wkx5m")
+Button/styles/disabled = ExtResource("2_eosc8")
+Button/styles/disabled_mirrored = ExtResource("2_eosc8")
+Button/styles/focus = ExtResource("3_6dh03")
+Button/styles/hover = ExtResource("4_usfkx")
+Button/styles/hover_mirrored = ExtResource("4_usfkx")
+Button/styles/hover_pressed = ExtResource("4_usfkx")
+Button/styles/hover_pressed_mirrored = ExtResource("5_dfuad")
+Button/styles/normal = ExtResource("3_6dh03")
+Button/styles/normal_mirrored = ExtResource("3_6dh03")
+Button/styles/pressed = ExtResource("5_dfuad")
+Button/styles/pressed_mirrored = ExtResource("5_dfuad")
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(1, 1, 1, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 1
+Label/constants/shadow_outline_size = 1
+Label/font_sizes/font_size = 16
+Label/fonts/font = ExtResource("1_wkx5m")
