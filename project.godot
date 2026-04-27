@@ -18,14 +18,16 @@ run/main_scene="res://章节场景/序章.tscn"
 config/use_custom_user_dir=true
 config/features=PackedStringArray("4.6", "Mobile")
 run/max_fps=60
+boot_splash/bg_color=Color(0, 0.2343106, 0.044840463, 1)
 boot_splash/show_image=false
-boot_splash/stretch_mode=0
+boot_splash/use_filter=false
+boot_splash/image="uid://yvjefvjdokp5"
 config/icon="uid://cd4yxkatgkbln"
 
 [autoload]
 
 "音乐引擎"="*uid://dyv1568phymm2"
-"精灵图"="*uid://qg20ddd545wi"
+"精灵图列表"="*uid://qg20ddd545wi"
 "节点提供变量"="*uid://cvkwkanf0vbaq"
 "存档"="*uid://bmb5esni20lsd"
 "全局变量"="*uid://th8rwru8seyn"
@@ -38,6 +40,7 @@ use_ambient=true
 
 window/subwindows/embed_subwindows=false
 window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 window/ios/allow_high_refresh_rate=false
 mouse_cursor/custom_image="uid://bp1evwq1e6wu5"
 
@@ -192,6 +195,11 @@ ESC={
 ]
 }
 
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+pointing/emulate_mouse_from_touch=false
+
 [internationalization]
 
 rendering/root_node_layout_direction=2
@@ -203,12 +211,12 @@ locale/locale_filter_mode=0
 
 [rendering]
 
-textures/canvas_textures/default_texture_filter=3
 rendering_device/driver.windows="d3d12"
 rendering_device/fallback_to_opengl3=false
 gl_compatibility/driver="Vulkan"
 renderer/rendering_method="mobile"
 textures/vram_compression/import_etc2_astc=true
+textures/default_filters/anisotropic_filtering_level=3
 lights_and_shadows/tighter_shadow_caster_culling=false
 
 [xr]
