@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://b76xdp8nbkt2t"]
+
+[node name="114514" type="Control" unique_id=1574004984]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CodeEdit" type="CodeEdit" parent="." unique_id=325270219]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 128.0
+offset_bottom = 136.0
+grow_horizontal = 2
+
+[node name="TextEdit" type="TextEdit" parent="." unique_id=754597907]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 33.0
+offset_bottom = 61.0
+grow_horizontal = 2
+theme_override_colors/caret_background_color = Color(1, 1, 1, 1)
+text = "50"
+placeholder_text = "50"
+
+[node name="Button" type="Button" parent="." unique_id=1946554633]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 29.0
+grow_horizontal = 2
+text = "初始器械能"
+
+[node name="TextEdit2" type="TextEdit" parent="." unique_id=1342675654]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 100.0
+offset_bottom = 128.0
+grow_horizontal = 2
+theme_override_colors/caret_background_color = Color(1, 1, 1, 1)
+text = "9990"
+placeholder_text = "9990"
+
+[node name="Button2" type="Button" parent="." unique_id=1571306014]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 67.0
+offset_bottom = 96.0
+grow_horizontal = 2
+text = "最大器械能"
