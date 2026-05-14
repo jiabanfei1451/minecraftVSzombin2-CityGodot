@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://c8p626nkks55x"]
+
+[ext_resource type="Script" uid="uid://dugkgsj6f4eyl" path="res://UI/UI脚本/场景脚本/描述框.gd" id="1_x1eat"]
+
+[node name="描述" type="Control" unique_id=1509445057]
+z_index = 1
+clip_contents = true
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 526.0
+offset_right = 576.0
+offset_bottom = 10.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+script = ExtResource("1_x1eat")
+metadata/_edit_use_anchors_ = true
+
+[node name="底色" type="ColorRect" parent="." unique_id=1235439716]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0)
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="本色" type="ColorRect" parent="底色" unique_id=2019156122]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0)
+mouse_filter = 2
+color = Color(0.86, 0.72154, 0.49880004, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="排列节点" type="VBoxContainer" parent="." unique_id=177695462]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+mouse_filter = 2
