@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c33cg8lh8yjw1"]
+
+[ext_resource type="Script" uid="uid://cx36lv08rwwve" path="res://测试/1.gd" id="1_cptbj"]
+[ext_resource type="Texture2D" uid="uid://c2vphsposgpaq" path="res://icon.svg" id="2_yrj4b"]
+
+[sub_resource type="BitMap" id="BitMap_qt573"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1biik"]
+size = Vector2(60, 80)
+
+[node name="1" type="Node2D" unique_id=1923623099]
+script = ExtResource("1_cptbj")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="." unique_id=237933951]
+texture_normal = ExtResource("2_yrj4b")
+texture_pressed = ExtResource("2_yrj4b")
+bitmask = SubResource("BitMap_qt573")
+shape = SubResource("RectangleShape2D_1biik")
+
+[connection signal="pressed" from="TouchScreenButton" to="." method="_on_touch_screen_button_pressed"]
+[connection signal="released" from="TouchScreenButton" to="." method="_on_touch_screen_button_released"]
