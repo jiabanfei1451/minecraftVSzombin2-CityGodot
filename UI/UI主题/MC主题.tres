@@ -1,0 +1,484 @@
+[gd_resource type="Theme" format=3 uid="uid://bsballpnnbgjv"]
+
+[ext_resource type="FontFile" uid="uid://drufi2oet6818" path="res://字体/minecraft_font.ttf" id="1_wkx5m"]
+[ext_resource type="StyleBox" uid="uid://vkflwcca3wlb" path="res://UI/UI主题/主题需要/MC按钮禁用状态.tres" id="2_eosc8"]
+[ext_resource type="StyleBox" uid="uid://doxtv8r6omtcd" path="res://UI/UI主题/主题需要/MC按钮正常状态.tres" id="3_6dh03"]
+[ext_resource type="StyleBox" uid="uid://b6ulwmhcmypwb" path="res://UI/UI主题/主题需要/MC按钮悬停.tres" id="4_usfkx"]
+[ext_resource type="StyleBox" uid="uid://b7xv588q1st15" path="res://UI/UI主题/主题需要/MC按钮按下状态.tres" id="5_dfuad"]
+[ext_resource type="StyleBox" uid="uid://dfswcfh5fcy7b" path="res://UI/UI主题/主题/背景板/背景板.tres" id="6_tilnr"]
+[ext_resource type="Texture2D" uid="uid://cy5lht0fkogyg" path="res://图片/button_disabled.png" id="7_pq23k"]
+[ext_resource type="Texture2D" uid="uid://bn5h68lg1rxek" path="res://图片/button_pressed.png" id="8_1fgwt"]
+[ext_resource type="Texture2D" uid="uid://d1lmk8ul6iehw" path="res://UI/UI素材图/UI.png" id="9_6fsmu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1fgwt"]
+texture = ExtResource("9_6fsmu")
+texture_margin_left = 9.0
+texture_margin_top = 9.0
+texture_margin_right = 9.0
+texture_margin_bottom = 9.0
+modulate_color = Color(0.38819927, 0.38819927, 0.38819927, 1)
+
+[sub_resource type="DPITexture" id="DPITexture_1fgwt"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#fff\" fill-opacity=\".75\" rx=\"7\"/><circle cx=\"24\" cy=\"8\" r=\"5\" fill=\"#1a1a1a\"/></svg>
+"
+
+[sub_resource type="DPITexture" id="DPITexture_6fsmu"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#fff\" fill-opacity=\".37\" rx=\"7\"/><circle cx=\"24\" cy=\"8\" r=\"5\" fill=\"#1a1a1a\" fill-opacity=\".5\"/></svg>
+"
+
+[sub_resource type="DPITexture" id="DPITexture_vo40m"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#fff\" fill-opacity=\".37\" rx=\"7\"/><circle cx=\"8\" cy=\"8\" r=\"5\" fill=\"#1a1a1a\" fill-opacity=\".5\"/></svg>
+"
+
+[sub_resource type="DPITexture" id="DPITexture_u8qgv"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#fff\" fill-opacity=\".75\" rx=\"7\"/><circle cx=\"8\" cy=\"8\" r=\"5\" fill=\"#1a1a1a\"/></svg>
+"
+
+[sub_resource type="DPITexture" id="DPITexture_t63qk"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><g fill-opacity=\".5\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#1a1a1a\" rx=\"7\"/><circle cx=\"8\" cy=\"8\" r=\"5\" fill=\"#fff\"/></g></svg>
+"
+
+[sub_resource type="DPITexture" id="DPITexture_jc27o"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><g fill-opacity=\".25\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#1a1a1a\" rx=\"7\"/><circle cx=\"8\" cy=\"8\" r=\"5\" fill=\"#fff\"/></g></svg>
+"
+
+[sub_resource type="DPITexture" id="DPITexture_vrpd3"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><g fill-opacity=\".25\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#1a1a1a\" rx=\"7\"/><circle cx=\"24\" cy=\"8\" r=\"5\" fill=\"#fff\"/></g></svg>
+"
+
+[sub_resource type="DPITexture" id="DPITexture_2vn6x"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><g fill-opacity=\".5\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#1a1a1a\" rx=\"7\"/><circle cx=\"24\" cy=\"8\" r=\"5\" fill=\"#fff\"/></g></svg>
+"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vo40m"]
+texture = ExtResource("7_pq23k")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0802674
+region_rect = Rect2(0, 0, 400, 40)
+modulate_color = Color(0.3290106, 0.3290106, 0.3290106, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u8qgv"]
+texture = ExtResource("7_pq23k")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0802674
+region_rect = Rect2(0, 0, 400, 40)
+modulate_color = Color(0.34874016, 0.34874016, 0.34874016, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t63qk"]
+texture = ExtResource("8_1fgwt")
+texture_margin_left = 4.7909913
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 4.594438
+region_rect = Rect2(0, 0, 400, 40)
+draw_center = false
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jc27o"]
+texture = ExtResource("9_6fsmu")
+texture_margin_left = 9.0
+texture_margin_top = 9.0
+texture_margin_right = 9.0
+texture_margin_bottom = 9.0
+modulate_color = Color(0.25666898, 0.25666898, 0.25666898, 1)
+
+[sub_resource type="DPITexture" id="DPITexture_qvn1f"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><path fill=\"#fff\" fill-opacity=\".75\" d=\"m1 3 2-2 5 5 5-5 2 2-5 5 5 5-2 2-5-5-5 5-2-2 5-5z\"/></svg>
+"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nds13"]
+texture = ExtResource("9_6fsmu")
+texture_margin_left = 9.0
+texture_margin_top = 9.0
+texture_margin_right = 9.0
+texture_margin_bottom = 9.0
+modulate_color = Color(0.3290106, 0.3290106, 0.3290106, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c5nq0"]
+texture = ExtResource("7_pq23k")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0802674
+region_rect = Rect2(0, 0, 400, 40)
+modulate_color = Color(0.47369397, 0.47369397, 0.47369397, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l4tav"]
+texture = ExtResource("9_6fsmu")
+texture_margin_left = 9.0
+texture_margin_top = 9.0
+texture_margin_right = 9.0
+texture_margin_bottom = 9.0
+modulate_color = Color(0.21063334, 0.21063334, 0.21063334, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2m2p8"]
+texture = ExtResource("9_6fsmu")
+texture_margin_left = 9.0
+texture_margin_top = 9.0
+texture_margin_right = 9.0
+texture_margin_bottom = 9.0
+modulate_color = Color(0.1514448, 0.1514448, 0.1514448, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lawng"]
+texture = ExtResource("7_pq23k")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0802674
+region_rect = Rect2(0, 0, 400, 40)
+modulate_color = Color(0.5591886, 0.5591886, 0.5591886, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6fsmu"]
+texture = ExtResource("7_pq23k")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0802674
+region_rect = Rect2(0, 0, 400, 40)
+modulate_color = Color(0.65125984, 0.65125984, 0.65125984, 1)
+
+[resource]
+default_font = ExtResource("1_wkx5m")
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_disabled_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/constants/align_to_largest_stylebox = 1
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/line_spacing = 0
+Button/constants/outline_size = 4
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("1_wkx5m")
+Button/styles/disabled = ExtResource("2_eosc8")
+Button/styles/disabled_mirrored = ExtResource("2_eosc8")
+Button/styles/focus = ExtResource("3_6dh03")
+Button/styles/hover = ExtResource("4_usfkx")
+Button/styles/hover_mirrored = ExtResource("4_usfkx")
+Button/styles/hover_pressed = ExtResource("4_usfkx")
+Button/styles/hover_pressed_mirrored = ExtResource("5_dfuad")
+Button/styles/normal = ExtResource("3_6dh03")
+Button/styles/normal_mirrored = ExtResource("3_6dh03")
+Button/styles/pressed = ExtResource("5_dfuad")
+Button/styles/pressed_mirrored = ExtResource("5_dfuad")
+CheckBox/colors/font_color = Color(1, 1, 1, 1)
+CheckBox/colors/font_disabled_color = Color(1, 1, 1, 0.5019608)
+CheckBox/colors/font_outline_color = Color(0, 0, 0, 1)
+CheckBox/constants/outline_size = 4
+CheckBox/styles/disabled = ExtResource("2_eosc8")
+CheckBox/styles/disabled_mirrored = ExtResource("2_eosc8")
+CheckBox/styles/focus = SubResource("StyleBoxTexture_1fgwt")
+CheckBox/styles/hover = ExtResource("4_usfkx")
+CheckBox/styles/hover_mirrored = ExtResource("4_usfkx")
+CheckBox/styles/hover_pressed = ExtResource("5_dfuad")
+CheckBox/styles/hover_pressed_mirrored = ExtResource("5_dfuad")
+CheckBox/styles/normal = ExtResource("3_6dh03")
+CheckBox/styles/normal_mirrored = ExtResource("3_6dh03")
+CheckBox/styles/pressed = ExtResource("5_dfuad")
+CheckBox/styles/pressed_mirrored = ExtResource("5_dfuad")
+CheckButton/colors/button_checked_color = Color(1, 1, 1, 1)
+CheckButton/colors/button_unchecked_color = Color(1, 1, 1, 1)
+CheckButton/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+CheckButton/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+CheckButton/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+CheckButton/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+CheckButton/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+CheckButton/colors/font_outline_color = Color(0, 0, 0, 1)
+CheckButton/colors/font_pressed_color = Color(1, 1, 1, 1)
+CheckButton/constants/check_v_offset = 0
+CheckButton/constants/h_separation = 4
+CheckButton/constants/outline_size = 4
+CheckButton/font_sizes/font_size = 16
+CheckButton/fonts/font = ExtResource("1_wkx5m")
+CheckButton/icons/checked = SubResource("DPITexture_1fgwt")
+CheckButton/icons/checked_disabled = SubResource("DPITexture_6fsmu")
+CheckButton/icons/checked_disabled_mirrored = SubResource("DPITexture_vo40m")
+CheckButton/icons/checked_mirrored = SubResource("DPITexture_u8qgv")
+CheckButton/icons/unchecked = SubResource("DPITexture_t63qk")
+CheckButton/icons/unchecked_disabled = SubResource("DPITexture_jc27o")
+CheckButton/icons/unchecked_disabled_mirrored = SubResource("DPITexture_vrpd3")
+CheckButton/icons/unchecked_mirrored = SubResource("DPITexture_2vn6x")
+CheckButton/styles/disabled = ExtResource("2_eosc8")
+CheckButton/styles/disabled_mirrored = ExtResource("2_eosc8")
+CheckButton/styles/focus = ExtResource("6_tilnr")
+CheckButton/styles/hover = ExtResource("4_usfkx")
+CheckButton/styles/hover_mirrored = ExtResource("4_usfkx")
+CheckButton/styles/hover_pressed = ExtResource("5_dfuad")
+CheckButton/styles/hover_pressed_mirrored = ExtResource("5_dfuad")
+CheckButton/styles/normal = ExtResource("3_6dh03")
+CheckButton/styles/normal_mirrored = ExtResource("3_6dh03")
+CheckButton/styles/pressed = ExtResource("5_dfuad")
+CheckButton/styles/pressed_mirrored = ExtResource("5_dfuad")
+CodeEdit/colors/background_color = Color(0, 0, 0, 0)
+CodeEdit/colors/bookmark_color = Color(0.5, 0.64, 1, 0.8)
+CodeEdit/colors/brace_mismatch_color = Color(1, 0.2, 0.2, 1)
+CodeEdit/colors/breakpoint_color = Color(0.9, 0.29, 0.3, 1)
+CodeEdit/colors/caret_background_color = Color(0, 0, 0, 1)
+CodeEdit/colors/caret_color = Color(0.6578363, 0.8234221, 1, 1)
+CodeEdit/colors/code_folding_color = Color(0.8, 0.8, 0.8, 0.8)
+CodeEdit/colors/completion_background_color = Color(0.17, 0.16, 0.2, 1)
+CodeEdit/colors/completion_existing_color = Color(0.87, 0.87, 0.87, 0.13)
+CodeEdit/colors/completion_scroll_color = Color(1, 1, 1, 0.29)
+CodeEdit/colors/completion_scroll_hovered_color = Color(1, 1, 1, 0.4)
+CodeEdit/colors/completion_selected_color = Color(0.26, 0.26, 0.27, 1)
+CodeEdit/colors/current_line_color = Color(0.25, 0.25, 0.26, 0.8)
+CodeEdit/colors/executing_line_color = Color(0.98, 0.89, 0.27, 1)
+CodeEdit/colors/folded_code_region_color = Color(0.68, 0.46, 0.77, 0.2)
+CodeEdit/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+CodeEdit/colors/font_outline_color = Color(0, 0, 0, 1)
+CodeEdit/colors/font_placeholder_color = Color(0.875, 0.875, 0.875, 0.6)
+CodeEdit/colors/font_readonly_color = Color(0.875, 0.875, 0.875, 0.5)
+CodeEdit/colors/font_selected_color = Color(0, 0, 0, 0)
+CodeEdit/colors/line_length_guideline_color = Color(0.3, 0.5, 0.8, 0.1)
+CodeEdit/colors/line_number_color = Color(0.67, 0.67, 0.67, 0.4)
+CodeEdit/colors/search_result_border_color = Color(0.3, 0.3, 0.3, 0.4)
+CodeEdit/colors/search_result_color = Color(0.3, 0.3, 0.3, 1)
+CodeEdit/colors/selection_color = Color(0.5019608, 0.5019608, 0.5019608, 1)
+CodeEdit/colors/word_highlighted_color = Color(0.8, 0.9, 0.9, 0.15)
+CodeEdit/constants/caret_width = 1
+CodeEdit/constants/completion_lines = 7
+CodeEdit/constants/completion_max_width = 50
+CodeEdit/constants/completion_scroll_width = 6
+CodeEdit/constants/h_separation = 0
+CodeEdit/constants/line_spacing = 4
+CodeEdit/constants/outline_size = 4
+CodeEdit/constants/wrap_offset = 0
+CodeEdit/styles/completion = ExtResource("2_eosc8")
+CodeEdit/styles/focus = SubResource("StyleBoxTexture_vo40m")
+CodeEdit/styles/normal = ExtResource("2_eosc8")
+CodeEdit/styles/panel = SubResource("StyleBoxTexture_u8qgv")
+CodeEdit/styles/read_only = ExtResource("2_eosc8")
+ColorPicker/styles/picker_focus_circle = ExtResource("3_6dh03")
+ColorPicker/styles/picker_focus_rectangle = ExtResource("3_6dh03")
+ColorPicker/styles/sample_focus = ExtResource("3_6dh03")
+ColorPicker/styles/tab_selected = ExtResource("2_eosc8")
+ColorPicker/styles/tab_unselected = ExtResource("2_eosc8")
+ColorPickerButton/colors/font_color = Color(1, 1, 1, 1)
+ColorPickerButton/colors/font_disabled_color = Color(0.9, 0.9, 0.9, 0.3)
+ColorPickerButton/colors/font_focus_color = Color(1, 1, 1, 1)
+ColorPickerButton/colors/font_hover_color = Color(1, 1, 1, 1)
+ColorPickerButton/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+ColorPickerButton/colors/font_outline_color = Color(0, 0, 0, 1)
+ColorPickerButton/colors/font_pressed_color = Color(0.8, 0.8, 0.8, 1)
+ColorPickerButton/colors/icon_disabled_color = Color(0, 0, 0, 1)
+ColorPickerButton/colors/icon_focus_color = Color(0, 0, 0, 1)
+ColorPickerButton/colors/icon_hover_color = Color(0, 0, 0, 1)
+ColorPickerButton/colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+ColorPickerButton/colors/icon_normal_color = Color(0, 0, 0, 1)
+ColorPickerButton/colors/icon_pressed_color = Color(0, 0, 0, 1)
+ColorPickerButton/constants/outline_size = 4
+ColorPickerButton/fonts/font = ExtResource("1_wkx5m")
+ColorPickerButton/styles/disabled = ExtResource("2_eosc8")
+ColorPickerButton/styles/disabled_mirrored = ExtResource("2_eosc8")
+ColorPickerButton/styles/focus = ExtResource("6_tilnr")
+ColorPickerButton/styles/hover = ExtResource("4_usfkx")
+ColorPickerButton/styles/hover_mirrored = ExtResource("4_usfkx")
+ColorPickerButton/styles/hover_pressed = ExtResource("5_dfuad")
+ColorPickerButton/styles/hover_pressed_mirrored = ExtResource("5_dfuad")
+ColorPickerButton/styles/normal = ExtResource("3_6dh03")
+ColorPickerButton/styles/normal_mirrored = ExtResource("3_6dh03")
+ColorPickerButton/styles/pressed = ExtResource("5_dfuad")
+ColorPickerButton/styles/pressed_mirrored = ExtResource("5_dfuad")
+HScrollBar/styles/grabber = ExtResource("3_6dh03")
+HScrollBar/styles/grabber_highlight = ExtResource("4_usfkx")
+HScrollBar/styles/grabber_pressed = ExtResource("5_dfuad")
+HScrollBar/styles/scroll = ExtResource("2_eosc8")
+HScrollBar/styles/scroll_focus = ExtResource("4_usfkx")
+ItemList/colors/font_color = Color(1, 1, 1, 1)
+ItemList/colors/font_hovered_color = Color(0.95, 0.95, 0.95, 1)
+ItemList/colors/font_hovered_selected_color = Color(1, 1, 1, 1)
+ItemList/colors/font_outline_color = Color(0, 0, 0, 1)
+ItemList/colors/font_selected_color = Color(0, 0.55387497, 1, 1)
+ItemList/colors/guide_color = Color(1, 1, 1, 1)
+ItemList/colors/scroll_hint_color = Color(0, 0, 0, 1)
+ItemList/constants/outline_size = 4
+ItemList/fonts/font = ExtResource("1_wkx5m")
+ItemList/styles/cursor = ExtResource("4_usfkx")
+ItemList/styles/cursor_unfocused = SubResource("StyleBoxTexture_t63qk")
+ItemList/styles/focus = SubResource("StyleBoxTexture_t63qk")
+ItemList/styles/hovered = ExtResource("4_usfkx")
+ItemList/styles/hovered_selected = SubResource("StyleBoxTexture_t63qk")
+ItemList/styles/hovered_selected_focus = ExtResource("4_usfkx")
+ItemList/styles/panel = SubResource("StyleBoxTexture_jc27o")
+ItemList/styles/selected = SubResource("StyleBoxTexture_t63qk")
+ItemList/styles/selected_focus = ExtResource("4_usfkx")
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 1)
+Label/font_sizes/font_size = 16
+Label/fonts/font = ExtResource("1_wkx5m")
+LineEdit/colors/caret_color = Color(0.5854947, 0.8577071, 1, 1)
+LineEdit/colors/clear_button_color = Color(1, 1, 1, 1)
+LineEdit/colors/clear_button_color_pressed = Color(1, 1, 1, 1)
+LineEdit/colors/font_color = Color(1, 1, 1, 1)
+LineEdit/colors/font_outline_color = Color(0, 0, 0, 1)
+LineEdit/colors/font_placeholder_color = Color(1, 1, 1, 1)
+LineEdit/colors/font_selected_color = Color(0, 0.42352915, 1, 1)
+LineEdit/colors/font_uneditable_color = Color(0.61837727, 0.61837727, 0.61837727, 1)
+LineEdit/colors/selection_color = Color(1, 1, 1, 1)
+LineEdit/constants/caret_width = 1
+LineEdit/constants/minimum_character_width = 4
+LineEdit/constants/outline_size = 4
+LineEdit/font_sizes/font_size = 16
+LineEdit/fonts/font = ExtResource("1_wkx5m")
+LineEdit/icons/clear = SubResource("DPITexture_qvn1f")
+LineEdit/styles/focus = ExtResource("6_tilnr")
+LineEdit/styles/normal = ExtResource("5_dfuad")
+LineEdit/styles/read_only = ExtResource("2_eosc8")
+MenuBar/colors/font_color = Color(1, 1, 1, 1)
+MenuBar/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+MenuBar/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+MenuBar/colors/font_hover_color = Color(1, 1, 1, 1)
+MenuBar/colors/font_hover_pressed_color = Color(0, 0.57329655, 1, 1)
+MenuBar/colors/font_outline_color = Color(0, 0, 0, 1)
+MenuBar/colors/font_pressed_color = Color(0, 0.5205393, 1, 1)
+MenuBar/constants/outline_size = 4
+MenuBar/fonts/font = ExtResource("1_wkx5m")
+MenuBar/styles/disabled = ExtResource("6_tilnr")
+MenuBar/styles/disabled_mirrored = ExtResource("6_tilnr")
+MenuBar/styles/hover = ExtResource("4_usfkx")
+MenuBar/styles/hover_mirrored = ExtResource("4_usfkx")
+MenuBar/styles/hover_pressed = ExtResource("5_dfuad")
+MenuBar/styles/hover_pressed_mirrored = ExtResource("5_dfuad")
+MenuBar/styles/normal = ExtResource("3_6dh03")
+MenuBar/styles/normal_mirrored = ExtResource("3_6dh03")
+MenuBar/styles/pressed = ExtResource("5_dfuad")
+MenuBar/styles/pressed_mirrored = ExtResource("5_dfuad")
+MenuButton/colors/font_color = Color(1, 1, 1, 1)
+MenuButton/colors/font_disabled_color = Color(1, 1, 1, 0.3)
+MenuButton/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+MenuButton/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+MenuButton/colors/font_hover_pressed_color = Color(0, 0.50206685, 1, 1)
+MenuButton/colors/font_outline_color = Color(0, 0, 0, 1)
+MenuButton/colors/font_pressed_color = Color(0, 0.5321255, 1, 1)
+MenuButton/colors/icon_disabled_color = Color(0, 0, 0, 1)
+MenuButton/colors/icon_focus_color = Color(1, 1, 1, 1)
+MenuButton/colors/icon_hover_color = Color(1, 1, 1, 1)
+MenuButton/colors/icon_hover_pressed_color = Color(0, 0.571501, 1, 1)
+MenuButton/colors/icon_normal_color = Color(1, 1, 1, 1)
+MenuButton/colors/icon_pressed_color = Color(0, 0.6230023, 1, 1)
+MenuButton/constants/outline_size = 4
+MenuButton/fonts/font = ExtResource("1_wkx5m")
+MenuButton/styles/disabled = ExtResource("2_eosc8")
+MenuButton/styles/disabled_mirrored = ExtResource("2_eosc8")
+MenuButton/styles/focus = SubResource("StyleBoxTexture_nds13")
+MenuButton/styles/hover = ExtResource("4_usfkx")
+MenuButton/styles/hover_mirrored = ExtResource("4_usfkx")
+MenuButton/styles/hover_pressed = ExtResource("5_dfuad")
+MenuButton/styles/hover_pressed_mirrored = ExtResource("5_dfuad")
+MenuButton/styles/normal = ExtResource("3_6dh03")
+MenuButton/styles/normal_mirrored = ExtResource("3_6dh03")
+MenuButton/styles/pressed = ExtResource("5_dfuad")
+MenuButton/styles/pressed_mirrored = ExtResource("5_dfuad")
+OptionButton/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+OptionButton/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+OptionButton/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+OptionButton/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+OptionButton/colors/font_hover_pressed_color = Color(0, 0.47067547, 1, 1)
+OptionButton/colors/font_outline_color = Color(0, 0, 0, 1)
+OptionButton/colors/font_pressed_color = Color(1, 1, 1, 1)
+OptionButton/colors/icon_disabled_color = Color(0, 0, 0, 1)
+OptionButton/colors/icon_focus_color = Color(1, 1, 1, 1)
+OptionButton/colors/icon_hover_color = Color(1, 1, 1, 1)
+OptionButton/colors/icon_hover_pressed_color = Color(0, 0.50002193, 1, 1)
+OptionButton/colors/icon_normal_color = Color(1, 1, 1, 1)
+OptionButton/colors/icon_pressed_color = Color(0, 0.58305216, 1, 1)
+OptionButton/constants/outline_size = 4
+OptionButton/fonts/font = ExtResource("1_wkx5m")
+Panel/styles/panel = SubResource("StyleBoxTexture_c5nq0")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_l4tav")
+PopupMenu/colors/font_accelerator_color = Color(1, 1, 1, 0.8)
+PopupMenu/colors/font_color = Color(1, 1, 1, 1)
+PopupMenu/colors/font_disabled_color = Color(1, 1, 1, 0.8)
+PopupMenu/colors/font_hover_color = Color(1, 1, 1, 1)
+PopupMenu/colors/font_outline_color = Color(0, 0, 0, 1)
+PopupMenu/colors/font_separator_color = Color(1, 1, 1, 1)
+PopupMenu/constants/outline_size = 4
+PopupMenu/fonts/font = ExtResource("1_wkx5m")
+PopupMenu/fonts/font_separator = ExtResource("1_wkx5m")
+PopupMenu/fonts/title_font = ExtResource("1_wkx5m")
+PopupMenu/styles/embedded_border = ExtResource("2_eosc8")
+PopupMenu/styles/embedded_unfocused_border = ExtResource("2_eosc8")
+PopupMenu/styles/hover = ExtResource("4_usfkx")
+PopupMenu/styles/labeled_separator_left = ExtResource("2_eosc8")
+PopupMenu/styles/labeled_separator_right = ExtResource("2_eosc8")
+PopupMenu/styles/panel = SubResource("StyleBoxTexture_2m2p8")
+PopupMenu/styles/separator = ExtResource("2_eosc8")
+TabBar/fonts/font = ExtResource("1_wkx5m")
+TabBar/styles/button_highlight = ExtResource("3_6dh03")
+TabBar/styles/button_pressed = ExtResource("5_dfuad")
+TabBar/styles/tab_disabled = ExtResource("2_eosc8")
+TabBar/styles/tab_focus = ExtResource("4_usfkx")
+TabBar/styles/tab_hovered = ExtResource("4_usfkx")
+TabBar/styles/tab_selected = ExtResource("5_dfuad")
+TabBar/styles/tab_unselected = ExtResource("3_6dh03")
+TabContainer/colors/drop_mark_color = Color(1, 1, 1, 1)
+TabContainer/colors/font_hovered_color = Color(1, 1, 1, 1)
+TabContainer/colors/font_outline_color = Color(0, 0, 0, 1)
+TabContainer/colors/font_selected_color = Color(1, 1, 1, 1)
+TabContainer/colors/font_unselected_color = Color(1, 1, 1, 1)
+TabContainer/colors/icon_disabled_color = Color(1, 1, 1, 1)
+TabContainer/colors/icon_hovered_color = Color(1, 1, 1, 1)
+TabContainer/colors/icon_selected_color = Color(1, 1, 1, 1)
+TabContainer/colors/icon_unselected_color = Color(1, 1, 1, 1)
+TabContainer/constants/icon_max_width = 0
+TabContainer/constants/icon_separation = 0
+TabContainer/constants/outline_size = 4
+TabContainer/constants/side_margin = 0
+TabContainer/constants/tab_separation = -1
+TabContainer/fonts/font = ExtResource("1_wkx5m")
+TabContainer/styles/panel = SubResource("StyleBoxTexture_lawng")
+TabContainer/styles/tab_disabled = SubResource("StyleBoxTexture_lawng")
+TabContainer/styles/tab_focus = ExtResource("4_usfkx")
+TabContainer/styles/tab_hovered = ExtResource("4_usfkx")
+TabContainer/styles/tab_selected = ExtResource("5_dfuad")
+TabContainer/styles/tab_unselected = ExtResource("3_6dh03")
+TabContainer/styles/tabbar_background = ExtResource("3_6dh03")
+TextEdit/colors/background_color = Color(0, 0, 0, 0)
+TextEdit/colors/caret_background_color = Color(0, 0, 0, 1)
+TextEdit/colors/caret_color = Color(0.76306057, 0.9099246, 1, 1)
+TextEdit/colors/current_line_color = Color(0.25, 0.25, 0.26, 0.8)
+TextEdit/colors/font_color = Color(1, 1, 1, 1)
+TextEdit/colors/font_outline_color = Color(0, 0, 0, 1)
+TextEdit/colors/font_placeholder_color = Color(0.875, 0.875, 0.875, 0.6)
+TextEdit/colors/font_readonly_color = Color(0.875, 0.875, 0.875, 0.5)
+TextEdit/colors/font_selected_color = Color(0, 0.4260168, 1, 1)
+TextEdit/colors/search_result_border_color = Color(0.3, 0.3, 0.3, 0.4)
+TextEdit/colors/search_result_color = Color(0.3, 0.3, 0.3, 1)
+TextEdit/colors/selection_color = Color(1, 1, 1, 1)
+TextEdit/colors/word_highlighted_color = Color(0.5, 0.5, 0.5, 0.25)
+TextEdit/constants/caret_width = 1
+TextEdit/constants/line_spacing = 4
+TextEdit/constants/outline_size = 4
+TextEdit/constants/wrap_offset = 10
+TextEdit/fonts/font = ExtResource("1_wkx5m")
+TextEdit/styles/focus = ExtResource("6_tilnr")
+TextEdit/styles/normal = ExtResource("5_dfuad")
+TextEdit/styles/read_only = ExtResource("2_eosc8")
+Tree/colors/font_color = Color(1, 1, 1, 1)
+Tree/colors/font_outline_color = Color(0, 0, 0, 1)
+Tree/constants/outline_size = 4
+Tree/fonts/font = ExtResource("1_wkx5m")
+Tree/fonts/title_button_font = ExtResource("1_wkx5m")
+Tree/styles/button_hover = ExtResource("5_dfuad")
+Tree/styles/button_pressed = ExtResource("5_dfuad")
+Tree/styles/focus = ExtResource("3_6dh03")
+Tree/styles/hovered = ExtResource("4_usfkx")
+Tree/styles/hovered_dimmed = ExtResource("3_6dh03")
+Tree/styles/hovered_selected = ExtResource("4_usfkx")
+Tree/styles/hovered_selected_focus = ExtResource("3_6dh03")
+Tree/styles/panel = SubResource("StyleBoxTexture_6fsmu")
+Tree/styles/selected = ExtResource("5_dfuad")
+Tree/styles/selected_focus = ExtResource("5_dfuad")
+Tree/styles/title_button_hover = ExtResource("5_dfuad")
+Tree/styles/title_button_normal = ExtResource("5_dfuad")
+Tree/styles/title_button_pressed = ExtResource("5_dfuad")
+VScrollBar/constants/padding_left = 0
+VScrollBar/constants/padding_right = 0
+VScrollBar/styles/grabber = ExtResource("3_6dh03")
+VScrollBar/styles/grabber_highlight = ExtResource("4_usfkx")
+VScrollBar/styles/grabber_pressed = ExtResource("5_dfuad")
+VScrollBar/styles/scroll = ExtResource("2_eosc8")
+VScrollBar/styles/scroll_focus = ExtResource("2_eosc8")
