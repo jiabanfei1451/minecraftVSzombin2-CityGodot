@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://d0sfr06kc3xjp"]
+
+[ext_resource type="Script" uid="uid://sc48ukg1du60" path="res://addons/touch/Script/触摸控制器.gd" id="1_f3mtd"]
+
+[node name="触摸控制器" type="Control" unique_id=855688938]
+layout_direction = 2
+layout_mode = 3
+anchors_preset = 0
+offset_left = 115.0
+offset_top = 193.0
+offset_right = 155.0
+offset_bottom = 233.0
+script = ExtResource("1_f3mtd")
+
+[node name="DEBUGRect" type="ColorRect" parent="." unique_id=1930151188]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.72156864, 1, 0.23529412)
+
+[node name="DEBUGRect2" type="ColorRect" parent="DEBUGRect" unique_id=2002772360]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_vertical = 2
+color = Color(0, 0.72156864, 1, 0.23529412)
+
+[node name="DEBUGRect3" type="ColorRect" parent="DEBUGRect" unique_id=167800063]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+grow_vertical = 2
+color = Color(0, 0.72156864, 1, 0.23529412)
+
+[node name="DEBUGRect4" type="ColorRect" parent="DEBUGRect" unique_id=319210039]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_bottom = 1.0
+grow_vertical = 0
+color = Color(0, 0.72156864, 1, 0.23529412)
+
+[node name="DEBUGRect5" type="ColorRect" parent="DEBUGRect" unique_id=2028798474]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+grow_vertical = 0
+color = Color(0, 0.72156864, 1, 0.23529412)

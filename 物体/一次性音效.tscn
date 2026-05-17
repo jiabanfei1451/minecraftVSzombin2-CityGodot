@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cljemrllejvmp"]
+
+[ext_resource type="Script" uid="uid://b8r58kyhh0lxp" path="res://脚本/一次性音效.gd" id="1_2cxs5"]
+
+[node name="一次性音效" type="AudioStreamPlayer" unique_id=880858462]
+script = ExtResource("1_2cxs5")
+"选项" = "音效"
+
+[connection signal="finished" from="." to="." method="_on_finished"]
