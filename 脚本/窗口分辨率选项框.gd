@@ -1,36 +1,9 @@
 extends Control
 var 展开 : bool = true
+@export var 触摸控制器列表 : Array[触摸控制器] = []
 func _ready() -> void:
-	var d = Button.new()
-	d.theme = preload("res://UI/UI主题/MC主题.tres")
-	$VBoxContainer.add_child(d)
-	d.text = str(DisplayServer.screen_get_size())
-	d.pressed.connect(_屏幕分辨率)
-	d = Button.new()
-	d.theme = preload("res://UI/UI主题/MC主题.tres")
-	$VBoxContainer.add_child(d)
-	d.text = "1920x1080"
-	d.pressed.connect(_x1920x1080)
-	d = Button.new()
-	d.theme = preload("res://UI/UI主题/MC主题.tres")
-	$VBoxContainer.add_child(d)
-	d.text = "1680x900"
-	d.pressed.connect(_x1680x900)
-	d = Button.new()
-	d.theme = preload("res://UI/UI主题/MC主题.tres")
-	$VBoxContainer.add_child(d)
-	d.text = "1280x720"
-	d.pressed.connect(_x1280x720)
-	d = Button.new()
-	d.theme = preload("res://UI/UI主题/MC主题.tres")
-	$VBoxContainer.add_child(d)
-	d.text = "1152x648"
-	d.pressed.connect(_x1152x648)
-	d = Button.new()
-	d.theme = preload("res://UI/UI主题/MC主题.tres")
-	$VBoxContainer.add_child(d)
-	d.text = "800x600"
-	d.pressed.connect(_x800x600)
+	for i in 触摸控制器列表:
+		i.启用 = false
 func _xnxn():
 	pass
 func _x800x600() -> void:
@@ -65,10 +38,15 @@ func _展开() -> void:
 	var te = create_tween()
 	var te2 = create_tween()
 	if 展开 == false:
-		te.tween_property($".","size",Vector2(134.667,27),0.5).set_trans(Tween.TRANS_QUART)
-		te2.tween_property($Button,"modulate",Color(1.0, 1.0, 1.0, 1.0),0.75).set_trans(Tween.TRANS_SINE)
+		te2.tween_property($"展开","modulate",Color(1.0, 1.0, 1.0, 1.0),0.75).set_trans(Tween.TRANS_SINE)
+		te.tween_property($".","size",Vector2(138,26.08),0.75).set_trans(Tween.TRANS_QUART)
 		展开 = true
+		for i in 触摸控制器列表:
+			i.启用 = false
 	else:
-		te.tween_property($".","size",$VBoxContainer.size + $VBoxContainer.position + Vector2(2,2),0.5).set_trans(Tween.TRANS_QUART)
-		te2.tween_property($Button,"modulate",Color(1.0, 1.0, 1.0, 0.5),0.75).set_trans(Tween.TRANS_SINE)
+		te2.tween_property($"展开","modulate",Color(1.0, 1.0, 1.0, 0.0),0.75).set_trans(Tween.TRANS_SINE)
+		te.tween_property($".","size",$VBoxContainer.position + $VBoxContainer.size,0.75).set_trans(Tween.TRANS_QUART)
 		展开 = false
+		for i in 触摸控制器列表:
+			i.启用 = true
+	print(展开)

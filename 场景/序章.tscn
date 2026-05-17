@@ -30,14 +30,15 @@ script = ExtResource("1_y6jpe")
 "关卡信息" = "绝命矿坑"
 "器械能" = 9990
 "天色" = "夜晚"
-"滤镜强度" = 0.9
+"光源强度" = 1.0
+"滤镜强度" = 1.0
 
 [node name="地图" type="Sprite2D" parent="." unique_id=272418162]
 position = Vector2(-700, -510)
 texture = SubResource("AtlasTexture_x1yc8")
 centered = false
 script = ExtResource("3_x1yc8")
-"乘数" = 15
+"乘数" = 20
 metadata/_edit_lock_ = true
 
 [node name="草坪" type="Node2D" parent="." unique_id=963705123]

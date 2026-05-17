@@ -21,4 +21,5 @@ texture = ExtResource("2_di3p6")
 
 [node name="HDR光源" type="PointLight2D" parent="." unique_id=563393786]
 visible = false
+texture_filter = 2
 texture = ExtResource("2_di3p6")

@@ -1,6 +1,6 @@
-extends Button
-signal 点击时(button:Button)
+extends 触摸控制器
+signal _点击(button:触摸控制器)
 func _ready() -> void:
-	pressed.connect(_on_pressed)
+	抬起时void.connect(_on_pressed)
 func _on_pressed() -> void:
 	emit_signal("点击时",$".")

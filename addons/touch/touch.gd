@@ -1,4 +1,5 @@
 @tool
+@icon("res://addons/touch/Script/UIrect.png")
 extends EditorPlugin
 
 
