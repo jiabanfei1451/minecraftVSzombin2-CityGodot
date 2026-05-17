@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://crhfukveqrofn"]
 
-[ext_resource type="Script" uid="uid://bspajjw3chsgp" path="res://鼠标指示器.gd" id="1_adcs7"]
+[ext_resource type="Script" uid="uid://bspajjw3chsgp" path="res://测试/鼠标指示器.gd" id="1_adcs7"]
 
 [node name="鼠标指示器" type="Label" unique_id=184760719]
 offset_left = 13.0

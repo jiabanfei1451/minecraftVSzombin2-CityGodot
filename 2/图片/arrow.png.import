@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bp1evwq1e6wu5"
-path="res://.godot/imported/arrow(City).png-dc52233122eaf575591aa6edf6a46e26.ctex"
+uid="uid://b0cg0w4pc066j"
+path="res://.godot/imported/arrow.png-677ac2575e2ef13b814b212b6eaaa267.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://arrow(City).png"
-dest_files=["res://.godot/imported/arrow(City).png-dc52233122eaf575591aa6edf6a46e26.ctex"]
+source_file="res://2/图片/arrow.png"
+dest_files=["res://.godot/imported/arrow.png-677ac2575e2ef13b814b212b6eaaa267.ctex"]
 
 [params]
 
