@@ -3,12 +3,13 @@ using System;
 using System.Threading.Tasks.Dataflow;
 public partial class 怪物消散粒子 : Sprite2D
 {
-	[Export] private Godot.AtlasTexture Type = new Godot.AtlasTexture();
+	[Export] private Godot.AtlasTexture Type{get;set;}
 	private Godot.Vector2 位置;
 	private Random random = new Random();
 	private float 速度;
 	public override void _Ready() {
 		base._Ready();
+		Type = new();
 		速度 = random.NextSingle() * 20 + 10;
 		位置 = Position;
 		Type.Atlas = GD.Load<Godot.Texture2D>("res://物体/素材图/sactx-0-1024x1024-DXT5_BC3-effects-5ecf9be5.png");
@@ -37,6 +38,6 @@ public partial class 怪物消散粒子 : Sprite2D
 	public override void _Process(double delta) {
 		base._Process(delta);
 		Position = 位置;
-		位置.Y -= 速度 * (float)delta;
+		位置.Y -= 速度  * (float)delta;
 	}
 }
