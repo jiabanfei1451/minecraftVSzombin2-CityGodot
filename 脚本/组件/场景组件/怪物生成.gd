@@ -14,6 +14,7 @@ var 当前波数 : int
 @export var 开始倒计时 : int = 30
 @export var 剩余数量 : Array[Area2D]
 @export var 下一波倒计时 : float = 45
+@export var 大波数组 : Array[int]
 @export_subgroup("生成延迟")
 @export var 生成延迟 : float = 0.02
 @export var 生成坐标 : Vector2 = Vector2(500,45)
@@ -41,9 +42,12 @@ func 生成开始():
 	生成中 = true
 	emit_signal("开始生成")
 	while 生成中 and 当前波数 <= 生成数量.size():
+		当前波数 += 1
+		for i in 大波数组:
+			if 当前波数 == i:
+				print("DA!")
 		if 当前波数 < 生成数量.size():
 			生成波(当前波数)
-		当前波数 += 1
 		await 条件判断为真
 		await get_tree().create_timer(FPS).timeout
 
@@ -74,9 +78,16 @@ func 排除空数组():
 				await get_tree().create_timer(FPS).timeout
 		正在排除中 = false
 
-func 添加波(数量:int = 1,arr:Array[int] = []):
+## 描述？
+func 添加波(数量:int = 1,arr:Array[int] = [],大波:bool = false):
 	var siz = 生成列表.size()
 	生成列表.append([])
 	生成数量.append(数量)
 	siz = 生成列表.size()
 	生成列表[siz - 1].append_array(arr)
+	if 大波 == true:
+		大波数组.append(siz)
+	print(大波数组)
+
+func 提示一大波怪物():
+	pass

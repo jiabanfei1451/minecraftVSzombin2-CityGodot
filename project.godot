@@ -30,7 +30,7 @@ driver/output_latency=1
 
 [autoload]
 
-"音乐引擎"="*uid://dyv1568phymm2"
+"音量"="*uid://dyv1568phymm2"
 "精灵图列表"="*uid://qg20ddd545wi"
 "节点提供变量"="*uid://cvkwkanf0vbaq"
 "存档"="*uid://bmb5esni20lsd"
@@ -50,10 +50,17 @@ mouse_cursor/custom_image="uid://bp1evwq1e6wu5"
 [dotnet]
 
 project/assembly_name="Minecraft VS Zombies 2 City"
+project/tighter_shadow_caster_culling=false
+project/gi/use_half_resolution=false
+project/hdr_2d=false
+project/root_node_layout_direction=2
+project/jitter_projection=true
+project/emulate_touch_from_mouse=false
+project/android/disable_scroll_deadzone=false
 
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PackedStringArray("res://addons/touch/plugin.cfg", "res://addons/模板/plugin.cfg")
 
 [file_customization]
 
@@ -202,11 +209,13 @@ ESC={
 
 [input_devices]
 
+pointing/android/enable_pan_and_scale_gestures=true
+pointing/emulate_touch_from_mouse=true
 pointing/emulate_mouse_from_touch=false
 
 [internationalization]
 
-rendering/root_node_layout_direction=2
+rendering/root_node_layout_direction=1
 locale/locale_filter_mode=0
 
 [physics]
@@ -223,7 +232,6 @@ renderer/rendering_method="mobile"
 renderer/rendering_method.mobile="forward_plus"
 textures/vram_compression/import_etc2_astc=true
 textures/default_filters/anisotropic_filtering_level=3
-lights_and_shadows/tighter_shadow_caster_culling=false
 viewport/transparent_background=true
 
 [xr]

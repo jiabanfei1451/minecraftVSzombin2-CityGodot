@@ -1,5 +1,4 @@
 extends Node
-class_name 音量
 static var 音乐音量 : float = 100
 static var 音效音量 : float = 100
 static var 音乐列表 : Array[AudioStreamOggVorbis] = [

@@ -10,7 +10,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	选定器械 = get_tree().current_scene.当前器械
 	if 选定器械 != null:
-		var d : PackedScene = preload("res://addons/MVZ/114514.tscn")
 		$"选定的卡槽".texture = 精灵图列表.img[get_tree().current_scene.当前器械ID]
 		$"选定的卡槽".visible = true
 		$"选定的卡槽".position = get_viewport().get_mouse_position() - Vector2(10,10)

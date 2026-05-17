@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://b60h48bgorsrw" path="res://音效/MC按钮点击.ogg" id="10_twj4c"]
 [ext_resource type="Shader" uid="uid://c3tbl47xm0ek1" path="res://着色器/闪烁.gdshader" id="11_6vjo8"]
 [ext_resource type="Script" uid="uid://c3k2sp2sdnbph" path="res://脚本/组件/音频.gd" id="11_fx33r"]
+[ext_resource type="Script" uid="uid://sc48ukg1du60" path="res://addons/touch/Script/触摸控制器.gd" id="14_dh4i3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c8pay"]
 size = Vector2(74, 26)
@@ -43,10 +44,11 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.5, 1.5)
 theme = ExtResource("3_gq5nl")
-current_tab = 0
+current_tab = 1
 script = ExtResource("3_fx33r")
 
 [node name="窗口" type="Control" parent="TabContainer" unique_id=252405647]
+visible = false
 layout_direction = 2
 layout_mode = 2
 metadata/_tab_index = 0
@@ -255,12 +257,17 @@ offset_right = 36.0
 offset_bottom = 36.0
 text = "缩放"
 
+[node name="窗口2" type="Control" parent="TabContainer" unique_id=1104074844]
+layout_direction = 2
+layout_mode = 2
+metadata/_tab_index = 1
+
 [node name="系统信息" type="Control" parent="TabContainer" unique_id=292271911]
 visible = false
 layout_direction = 2
 layout_mode = 2
 script = ExtResource("5_gq5nl")
-metadata/_tab_index = 1
+metadata/_tab_index = 2
 
 [node name="系统名称" type="Label" parent="TabContainer/系统信息" unique_id=645860461]
 layout_mode = 0
@@ -346,6 +353,19 @@ theme_override_font_sizes/font_size = 24
 text = "保存"
 script = ExtResource("9_yo5pr")
 
+[node name="触摸控制器" type="ColorRect" parent="保存" unique_id=1127069375]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.39215687)
+script = ExtResource("14_dh4i3")
+"触摸模式" = 1
+metadata/_custom_type_script = "uid://sc48ukg1du60"
+
 [node name="保存2" type="Button" parent="." unique_id=1299304834]
 layout_direction = 2
 anchors_preset = 3
@@ -363,6 +383,17 @@ theme = ExtResource("3_gq5nl")
 theme_override_font_sizes/font_size = 24
 text = "退出"
 script = ExtResource("9_yo5pr")
+
+[node name="触摸控制器" type="ColorRect" parent="保存2" unique_id=1648858784]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.39215687)
+script = ExtResource("14_dh4i3")
+metadata/_custom_type_script = "uid://sc48ukg1du60"
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1488392605]
 visible = false
@@ -415,5 +446,5 @@ script = ExtResource("11_fx33r")
 [connection signal="点击时" from="TabContainer/窗口/FoldableContainer3/VBoxContainer/3" to="TabContainer/窗口/FoldableContainer3" method="_on__点击时"]
 [connection signal="pressed" from="TabContainer/窗口/FoldableContainer3/TouchScreenButton" to="TabContainer/窗口/FoldableContainer3" method="_展开"]
 [connection signal="drag_ended" from="TabContainer/窗口/HSlider" to="TabContainer/窗口/HSlider" method="_on_drag_ended"]
-[connection signal="pressed" from="保存" to="保存" method="_on_pressed"]
+[connection signal="抬起时void" from="保存/触摸控制器" to="保存" method="_on_pressed"]
 [connection signal="pressed" from="保存2" to="保存2" method="_on_pressed"]

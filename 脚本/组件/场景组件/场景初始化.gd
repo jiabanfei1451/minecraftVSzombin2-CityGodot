@@ -33,8 +33,9 @@ var 正在使用其他属性 : bool = false
 @export_group("属性")
 @export_enum("白日","夜晚") var 天色 : String = "白日"
 @export_enum("开启","关闭") var 夜色滤镜 : String = "开启"
-@export var 滤镜节点 : Area2D
+var 滤镜节点
 @export var 光源颜色 : Color
+@export var HDR光源 : bool = true
 @export_range(0,1,0.01) var 光源强度 : float = 0.5
 @export_range(0,1,0.01) var 滤镜强度 : float = 0.5
 #endregion
@@ -186,9 +187,11 @@ func level_ready():
 	#region 初始化
 	生成节点(preload("res://场景/必要物体/选卡动画.tscn"),null)
 	节点提供变量.摄像头 = get_node("选卡动画/摄像头")
-	var ps = 生成节点(preload("res://场景/必要物体/暗黑滤镜.tscn"),null)
 	生成节点(preload("res://场景/必要物体/音效.tscn"),null)
+	var ps : Area2D
+	ps = 生成节点(preload("res://场景/必要物体/暗黑滤镜.tscn"),null)
 	滤镜节点 = ps
+	ps.position = Vector2(0,0)
 	var 阴影 = 场景生成("阴影",1)
 	节点提供变量.阴影 = 阴影
 	var 粒子 = 场景生成("粒子",1)

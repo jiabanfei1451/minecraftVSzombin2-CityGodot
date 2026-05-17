@@ -12,3 +12,7 @@ func _on_pressed() -> void:
 	$"../ColorRect".visible=true
 	await get_tree().create_timer(1).timeout
 	$"../ColorRect".visible=false
+
+
+func _on_触摸控制器_抬起时(event: InputEvent) -> void:
+	pass # Replace with function body.

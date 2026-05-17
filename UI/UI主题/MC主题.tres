@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cy5lht0fkogyg" path="res://图片/button_disabled.png" id="7_pq23k"]
 [ext_resource type="Texture2D" uid="uid://bn5h68lg1rxek" path="res://图片/button_pressed.png" id="8_1fgwt"]
 [ext_resource type="Texture2D" uid="uid://d1lmk8ul6iehw" path="res://UI/UI素材图/UI.png" id="9_6fsmu"]
+[ext_resource type="Texture2D" uid="uid://bvif77d85dy7w" path="res://图片/button_2.png" id="9_vo40m"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1fgwt"]
 texture = ExtResource("9_6fsmu")
@@ -67,6 +68,21 @@ texture_margin_right = 5.0
 texture_margin_bottom = 5.0802674
 region_rect = Rect2(0, 0, 400, 40)
 modulate_color = Color(0.34874016, 0.34874016, 0.34874016, 1)
+
+[sub_resource type="DPITexture" id="DPITexture_c5nq0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_prrdt"]
+texture = ExtResource("7_pq23k")
+region_rect = Rect2(2, 2, 396, 36)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ndcno"]
+texture = ExtResource("9_vo40m")
+region_rect = Rect2(4, 4, 392, 32)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_1crh3"]
+grow_begin = 0.0
+grow_end = 0.0
+thickness = 7
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t63qk"]
 texture = ExtResource("8_1fgwt")
@@ -286,6 +302,11 @@ HScrollBar/styles/grabber_highlight = ExtResource("4_usfkx")
 HScrollBar/styles/grabber_pressed = ExtResource("5_dfuad")
 HScrollBar/styles/scroll = ExtResource("2_eosc8")
 HScrollBar/styles/scroll_focus = ExtResource("4_usfkx")
+HSlider/icons/grabber = SubResource("DPITexture_c5nq0")
+HSlider/icons/grabber_disabled = null
+HSlider/styles/grabber_area = SubResource("StyleBoxTexture_prrdt")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxTexture_ndcno")
+HSlider/styles/slider = SubResource("StyleBoxLine_1crh3")
 ItemList/colors/font_color = Color(1, 1, 1, 1)
 ItemList/colors/font_hovered_color = Color(0.95, 0.95, 0.95, 1)
 ItemList/colors/font_hovered_selected_color = Color(1, 1, 1, 1)
