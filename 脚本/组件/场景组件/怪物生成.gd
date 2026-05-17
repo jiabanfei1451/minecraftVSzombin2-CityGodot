@@ -45,7 +45,11 @@ func 生成开始():
 		当前波数 += 1
 		for i in 大波数组:
 			if 当前波数 == i:
-				print("DA!")
+				提示一大波怪物()
+				await get_tree().create_timer(2).timeout
+				if i == 大波数组.back():
+					最后一波()
+					await get_tree().create_timer(2).timeout
 		if 当前波数 < 生成数量.size():
 			生成波(当前波数)
 		await 条件判断为真
@@ -90,4 +94,39 @@ func 添加波(数量:int = 1,arr:Array[int] = [],大波:bool = false):
 	print(大波数组)
 
 func 提示一大波怪物():
-	pass
+	var 文字 = get_tree().current_scene.get_node("文字/文字")
+	var 初始缩放 : Vector2 = 文字.scale
+	var 音效 : PackedScene = preload("res://物体/一次性音效.tscn")
+	var 音效实例化 : AudioStreamPlayer = 音效.instantiate()
+	音效实例化.stream = preload("res://音效/一大波怪物进攻音效.ogg")
+	音效实例化.autoplay = true
+	文字.scale = 初始缩放 * 2
+	文字.modulate = Color(1,1,1,0)
+	add_child(音效实例化)
+	文字.text = 存档.获取Json内容("Level_Text.json",0,0)
+	var tweenscale = create_tween()
+	var tewwncolor = create_tween()
+	tweenscale.tween_property(文字,"scale",初始缩放 * 0.9,0.9).set_trans(Tween.TRANS_QUART)
+	tewwncolor.tween_property(文字,"modulate",Color(1.0, 1.0, 1.0, 1.0),0.75).set_trans(Tween.TRANS_QUART)
+	await get_tree().create_timer(0.5).timeout
+	tewwncolor = create_tween()
+	tewwncolor.tween_property(文字,"modulate",Color(1.0, 1.0, 1.0, 0.0),0.75).set_trans(Tween.TRANS_QUART)
+
+func 最后一波():
+	var 文字 = get_tree().current_scene.get_node("文字/文字")
+	var 初始缩放 : Vector2 = 文字.scale
+	var 音效 : PackedScene = preload("res://物体/一次性音效.tscn")
+	var 音效实例化 : AudioStreamPlayer = 音效.instantiate()
+	音效实例化.stream = preload("res://音效/最后一波.ogg")
+	音效实例化.autoplay = true
+	文字.scale = 初始缩放 * 2
+	文字.modulate = Color(1,1,1,0)
+	add_child(音效实例化)
+	文字.text = 存档.获取Json内容("Level_Text.json",0,1)
+	var tweenscale = create_tween()
+	var tewwncolor = create_tween()
+	tweenscale.tween_property(文字,"scale",初始缩放,0.9).set_trans(Tween.TRANS_QUART)
+	tewwncolor.tween_property(文字,"modulate",Color(1.0, 1.0, 1.0, 1.0),0.75).set_trans(Tween.TRANS_QUART)
+	await  get_tree().create_timer(0.5).timeout
+	tewwncolor = create_tween()
+	tewwncolor.tween_property(文字,"modulate",Color(1.0, 1.0, 1.0, 0.0),0.75).set_trans(Tween.TRANS_QUART)

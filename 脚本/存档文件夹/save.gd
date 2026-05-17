@@ -39,7 +39,8 @@ func give_数据(地此:String = "config.cfg",组:Array = [],nam:StringName = "n
 		if loa.get_value(组[1],组[2]) != null:
 			组[0].nam = loa.get_value(组[1],组[2])[0]
 			print(loa.get_value(组[1],组[2]))
-func 创建对话内容() -> void:
+
+func 创建对话内容() -> void:#暂时废弃
 	var 对话文件 = JSON.new()
 	对话文件.data = {
 		"dds" = 14,
@@ -49,6 +50,14 @@ func 创建对话内容() -> void:
 	var 读取 : JSON = preload("D:/json.json")
 	print(读取.data.dds)
 
+func 获取Json内容(语言文件:String = "Level_Text.json",语言:int = 0,加载条目:int = 0):
+	var text :JSON
+	if 语言 == 0:
+		text = load("res://2/Text/Zh_CN/" + 语言文件)
+		return text.data.Text[加载条目]
+	else:
+		text = load("res://2/Text/EN_US/" + 语言文件)
+		return text.data.Text[加载条目]
 func create_game_folder(folder_path: String) -> bool:
 	# 1. 获取目录访问器（使用用户数据目录，这是推荐的安全路径）
 	# user:// 是 Godot 的特殊路径，表示游戏的用户数据目录（不同平台路径不同）
