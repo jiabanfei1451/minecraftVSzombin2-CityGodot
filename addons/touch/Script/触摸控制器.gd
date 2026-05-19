@@ -6,8 +6,9 @@ extends ColorRect
 ## 短按时会触发
 signal 点击时(event:InputEvent,控制器:触摸控制器)
 signal 点击时void
-## 鼠标触碰到时进行触发
+## 鼠标触碰到时进行触发 （暂时废弃）
 signal 鼠标触碰时(event:InputEvent,控制器:触摸控制器)
+## 鼠标触碰到时进行触发 （暂时废弃）
 signal 鼠标触碰时void
 ## 按下触发
 signal 按下时(event:InputEvent,控制器:触摸控制器)
