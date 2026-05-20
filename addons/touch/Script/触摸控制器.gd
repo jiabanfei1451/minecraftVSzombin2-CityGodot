@@ -45,17 +45,15 @@ signal 拖拽抬起时void
 @export_group("DEBUG")
 @export var DEBUGColor : Color = Color(0.0, 0.302, 1.0, 0.4) 
 @export var DEBUG : bool = false
-var Rect
+var Rect : ReferenceRect
 var po = []
 var 计时 : bool = false
 var 计时_ : float = 0
 var pos : Array
 var 真实范围 : Vector2
+var 指点id : float
 func _ready() -> void:
-	if DEBUG == false:
-		modulate = Color(0,0,0,0)
-	else:
-		modulate = DEBUGColor
+	color = DEBUGColor
 	按下时.connect(_DEBUG_触摸控制器_按下时)
 	抬起时.connect(_DEBUG_触摸控制器_抬起时)
 	var ds = $"."
@@ -64,11 +62,14 @@ func _ready() -> void:
 		po.append(ds)
 		await get_tree().create_timer(0.02).timeout
 	mouse_filter = 2
-	if DEBUG == true:
-		var new = ColorRect.new()
-		Rect = new
-		ds.add_child(new)
+	if get_node("Rect") != null:
+		get_node("Rect").queue_free()
 
+	var new = ReferenceRect.new()
+	Rect = new
+	ds.add_child(new)
+	Rect.name = "Rect"
+	
 func _input(event: InputEvent) -> void:
 	if 启用 == true:
 		if 触摸模式 == 0:
@@ -85,11 +86,13 @@ func _input(event: InputEvent) -> void:
 					var touch : InputEventScreenDrag = event
 					touchpos = touch.position
 					if 按下状态 == true:
-						emit_signal("拖拽时void")
-						emit_signal("拖拽时",event,$".")
+						if event.index == 指点id:
+							emit_signal("拖拽时void")
+							emit_signal("拖拽时",event,$".")
 						if 拖拽状态 == false:
 							emit_signal("拖拽开始时",event,$".")
 							emit_signal("拖拽开始时void")
+							指点id = event.index
 							拖拽状态 = true
 				posi = 计算相对坐标() * 计算相对缩放() + 偏移offect - touchpos
 				var posx : float = posi.x
@@ -155,18 +158,17 @@ func _input(event: InputEvent) -> void:
 func _DEBUG_触摸控制器_按下时(event: InputEvent) -> void:
 	计时 = true
 func _process(delta: float) -> void:
+	if Rect != null:
+		if DEBUG == true:
+			Rect.border_color = DEBUGColor
+		else:
+			Rect.border_color = Color(0,0,0,0)
 	if 自动设置 == true:
 		范围 = size
 	if 计时 == true:
 		计时_ += delta
 	else:
 		计时_ = 0
-	if DEBUG == true:
-		if Rect != null:
-			if 启用 == true:
-				Rect.color = DEBUGColor
-			else:
-				Rect.color = Color.TRANSPARENT
 	if Rect != null:
 		Rect.position = 计算相对坐标() * 计算相对缩放() + 偏移offect
 		Rect.size = 范围 * 计算相对缩放()
@@ -196,3 +198,6 @@ func 计算相对缩放():
 	for i in 坐标:
 		最终缩放值 *= i
 	return 最终缩放值
+func _exit_tree() -> void:
+	if get_node("Rect") != null:
+		get_node("Rect").queue_free()
